@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaghough Mountassir | Ingénieur Cybersécurité & Développeur Full-Stack</title>
+  <meta name="description" content="Portfolio professionnel de Chaghough Mountassir, élève-ingénieur en cybersécurité à l'EMSI Marrakech. Spécialiste SIEM (Wazuh, FortiGate, Grafana), développement Full-Stack (Next.js, React, Supabase).">
+  <meta name="keywords" content="Chaghough Mountassir, Cybersécurité, SIEM Wazuh, FortiGate, TheHive, Grafana, Zabbix, EMSI Marrakech, Beflextravel, Next.js, Portfolio Ingénieur">
+  <meta name="author" content="Chaghough Mountassir">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Chaghough Mountassir — Ingénieur Cybersécurité & Développeur Full-Stack">
+  <meta property="og:description" content="Découvrez mes projets SIEM (Wazuh, FortiGate, TheHive) chez Union IT Services et la plateforme web Beflextravel.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Glow & Cyber Background Canvas -->
+  <canvas id="cyber-canvas"></canvas>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- ==========================================================================
+       Navigation Bar
+       ========================================================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <div class="nav-logo-icon">MC</div>
+        <div>
+          <span>Mountassir<span class="gradient-text">.sec</span></span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link" data-i18n="nav_about">À Propos</a></li>
+        <li><a href="#siem-project" class="nav-link" data-i18n="nav_siem">Stage SIEM</a></li>
+        <li><a href="#beflex-project" class="nav-link" data-i18n="nav_beflex">Beflextravel</a></li>
+        <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Expériences</a></li>
+        <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Compétences</a></li>
+        <li><a href="#education" class="nav-link" data-i18n="nav_education">Éducation</a></li>
+        <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="lang-toggle-btn" class="lang-toggle" title="Changer la langue">🌐 EN</button>
+        <a href="#contact" class="btn btn-primary btn-sm">Recruter</a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <header class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="hero-badge-wrap">
+          <div class="status-indicator" style="background: rgba(0, 242, 254, 0.1); border-color: rgba(0, 242, 254, 0.35); color: #00f2fe;">
+            <span class="pulse-dot" style="background-color: var(--cyber-cyan); box-shadow: 0 0 10px var(--cyber-cyan);"></span>
+            <span>🛡️ INGÉNIEUR EN CYBERSÉCURITÉ & DÉVELOPPEUR FULL-STACK</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Chaghough <span class="gradient-text">Mountassir</span>
+        </h1>
+
+        <div class="hero-role">
+          <span>&gt; </span>
+          <span class="typing-text">Élève-Ingénieur en Cybersécurité</span>
+          <span class="typing-cursor"></span>
+        </div>
+
+        <p class="hero-description">
+          Étudiant en 5e année du cycle ingénieur en cybersécurité à l'<strong>École Marocaine des Sciences de l'Ingénieur (EMSI Marrakech)</strong>. Je conçois des environnements <strong>SIEM / SOC</strong> unifiés (Wazuh, FortiGate, Grafana, TheHive) et développe des applications web full-stack robustes et sécurisées comme <strong>Beflextravel</strong>.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#siem-project" class="btn btn-primary">
+            <span>🛡️ Projet SIEM & SOC</span>
+          </a>
+          <a href="#beflex-project" class="btn btn-emerald">
+            <span>💼 Mission Freelance Beflextravel</span>
+          </a>
+          <a href="#cv-modal" class="btn btn-secondary" id="open-cv-btn">
+            <span>📄 Consulter CV</span>
+          </a>
+        </div>
+
+        <div class="hero-social-links">
+          <a href="https://github.com/mountassir-cha" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>🐙 GitHub: mountassir-cha</span>
+          </a>
+          <a href="https://linkedin.com/in/mountassir-chaghough" target="_blank" rel="noopener noreferrer" class="social-pill">
+            <span>💼 LinkedIn</span>
+          </a>
+          <a href="mailto:montassirchaghough5@gmail.com" class="social-pill">
+            <span>✉️ Email</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Cyber Profile Card & Interactive CLI Terminal -->
+      <div class="hero-visual">
+        <div class="cyber-profile-card">
+          <div class="profile-header">
+            <div class="profile-avatar-box">
+              <img src="assets/mountassir_profile.png" alt="Chaghough Mountassir" class="profile-avatar-img">
+            </div>
+            <div class="profile-info">
+              <h3>Chaghough Mountassir</h3>
+              <p>Élève-Ingénieur Cybersécurité (EMSI 5A)</p>
+              <div class="profile-badge-row">
+                <span class="mini-badge">SIEM & SOC</span>
+                <span class="mini-badge">Next.js 16</span>
+                <span class="mini-badge">Wazuh</span>
+                <span class="mini-badge">FortiGate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive CLI Terminal -->
+          <div class="terminal-window">
+            <div class="terminal-topbar">
+              <div class="terminal-dots">
+                <span class="t-dot t-dot-red"></span>
+                <span class="t-dot t-dot-yellow"></span>
+                <span class="t-dot t-dot-green"></span>
+              </div>
+              <div class="terminal-title">bash — mountassir@secops-terminal</div>
+              <div style="font-size: 0.7rem; color: #64748b;">v2.4</div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <div class="t-line"><span class="t-success">● Système Opérationnel</span> — Session connectée à EMSI SecOps Lab</div>
+              <div class="t-line"><span class="t-highlight">Tapez 'help' pour explorer mes projets ou mes coordonnées :</span></div>
+              <div class="t-line"><span class="t-prompt">mountassir@secops</span>:<span class="t-host">~</span>$ <span class="t-cmd">whoami</span></div>
+              <div class="t-line t-output">🛡️ Chaghough Mountassir — Ingénieur Cybersécurité & Développeur Full-Stack (EMSI Marrakech)</div>
+              <div class="t-line"><span class="t-prompt">mountassir@secops</span>:<span class="t-host">~</span>$ <span class="t-cmd">siem-summary</span></div>
+              <div class="t-line t-output">🛡️ Union IT Services: Wazuh SIEM + FortiGate Firewall + TheHive + Grafana</div>
+            </div>
+            <div style="padding: 0.5rem 1rem; background: #070d18; border-top: 1px solid rgba(0,242,254,0.15);">
+              <div class="terminal-input-row">
+                <span class="t-prompt">mountassir@secops</span>:<span class="t-host">~</span>$&nbsp;
+                <input type="text" id="terminal-input" class="terminal-input" placeholder="Tapez 'help', 'siem', 'beflextravel', 'skills'..." autocomplete="off">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Stats Grid -->
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">5e</div>
+          <div class="stat-label">Année Cycle Ingénieur (EMSI)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Expériences & Projets Réalisés</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Architecture SIEM & SOC Virtuelle</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">Full-Stack</div>
+          <div class="stat-label">Cybersécurité & Ingénierie Web</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       About Me Section
+       ========================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Profil & Parcours</span>
+        <h2 class="section-title">À Propos de <span class="gradient-text">Moi</span></h2>
+        <p class="section-subtitle">Une passion forgée entre la sécurité des systèmes d'information, la réponse aux incidents et l'ingénierie logicielle moderne.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text-content">
+          <div class="about-highlight-box">
+            <p>🎯 "Passionné par l'excellence technique, je conçois des solutions innovantes alliant <strong>sécurisation des infrastructures critiques</strong>, déploiement d'écosystèmes <strong>SIEM / SOC</strong> et développement d'applications <strong>Full-Stack</strong> modernes et résilientes."</p>
+          </div>
+
+          <p>
+            Actuellement en <strong>5ème année du cycle ingénieur en Cybersécurité à l'EMSI Marrakech</strong>, je développe des compétences avancées en sécurité informatique, modélisation d'architectures réseau sécurisées et développement logiciel.
+          </p>
+          <p>
+            Récemment en stage chez <strong>Union IT Services</strong>, j'ai conçu et déployé de bout en bout un environnement SIEM complet associant <strong>Wazuh</strong>, <strong>FortiGate</strong>, <strong>Zabbix</strong>, <strong>Grafana</strong> et <strong>TheHive</strong> sur une infrastructure virtualisée sous <strong>GNS3</strong>. En parallèle, j'interviens en tant que <strong>Développeur Freelance</strong> pour concevoir des applications web de haute performance comme <strong>Beflextravel</strong> (<a href="https://beflextravel.com" target="_blank" style="color: #00f2fe; text-decoration: underline;">beflextravel.com</a>).
+          </p>
+
+          <div class="about-info-table">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div class="info-details">
+                <span>Localisation</span>
+                <strong>Marrakech, Maroc</strong>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">🎓</div>
+              <div class="info-details">
+                <span>Formation</span>
+                <strong>Cycle Ingénieur Cybersécurité</strong>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div class="info-details">
+                <span>Téléphone</span>
+                <strong>0766 90 83 81</strong>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div class="info-details">
+                <span>Email</span>
+                <strong>montassirchaghough5@gmail.com</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">🛡️</div>
+            <h4>SIEM & Analyse SOC</h4>
+            <p>Déploiement Wazuh, ingestion de journaux, règles de détection d'intrusions, corrélation d'événements et pipeline TheHive.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🔒</div>
+            <h4>Sécurité Réseau & Pare-Feu</h4>
+            <p>Configuration FortiGate, segmentation en zones DMZ/LAN, politiques NAT, routage et simulation de topologies sous GNS3.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">📊</div>
+            <h4>Supervision & Métriques</h4>
+            <p>Mise en place de dashboards unifiés Grafana et sondes Zabbix pour le monitoring de l'infrastructure et des alertes de sécurité.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <h4>Développement Full-Stack & Freelance</h4>
+            <p>Conception d'applications web scalables avec Next.js 16, React 19, Python, Supabase, PHP et bases SQL/NoSQL.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Flagship Project 1: SIEM & SOC (Union IT Services)
+       ========================================================================== -->
+  <section class="featured-project" id="siem-project">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Projet Phare 2026</span>
+        <h2 class="section-title">Infrastructure <span class="gradient-text">SIEM & SOC</span> Virtuelle</h2>
+        <p class="section-subtitle">Déploiement complet d'une solution de détection et réponse aux incidents pour Union IT Services sous environnement virtualisé GNS3.</p>
+      </div>
+
+      <div class="siem-hero-card">
+        <div class="siem-header-grid">
+          <div>
+            <div class="siem-company-badge">🏢 Stage de Fin d'Année — Union IT Services (2026)</div>
+            <h3 class="siem-title">Plateforme SIEM & Pipeline de Réponse aux Incidents</h3>
+            <p class="siem-subtitle">
+              Conception d'un écosystème de sécurité défensif complet combinant la collecte d'événements <strong>Wazuh</strong>, le filtrage périmétrique <strong>FortiGate</strong>, la surveillance <strong>Grafana & Zabbix</strong> et la gestion des incidents <strong>TheHive</strong>.
+            </p>
+          </div>
+          <div>
+            <span class="status-indicator">
+              <span class="pulse-dot"></span>
+              <span>100% Fonctionnel & Validé</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Interactive Screenshot Viewer with Tabs -->
+        <div class="siem-visual-section">
+          <div class="siem-tabs">
+            <button type="button" class="siem-tab-btn active" data-screen="wazuh">
+              <span>📊 Dashboard Wazuh SIEM</span>
+            </button>
+            <button type="button" class="siem-tab-btn" data-screen="grafana">
+              <span>📈 Supervision Grafana & FortiGate</span>
+            </button>
+            <button type="button" class="siem-tab-btn" data-screen="topology">
+              <span>🌐 Topologie Réseau GNS3</span>
+            </button>
+          </div>
+
+          <div class="siem-screen-container">
+            <img src="assets/siem_wazuh_dashboard.jpg" alt="Wazuh SIEM Security Dashboard" class="siem-screen-img" id="siem-active-img">
+            <div class="siem-screen-overlay">
+              <div>
+                <h4 id="siem-screen-title">Tableau de Bord Wazuh SIEM & Détection des Menaces en Temps Réel</h4>
+                <p id="siem-screen-desc">Supervision des agents, analyse des attaques par force brute SSH, corrélation MITRE ATT&CK et détection d'intrusions.</p>
+              </div>
+              <button type="button" class="btn btn-secondary btn-sm" id="btn-zoom-siem">🔍 Agrandir</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive 4-Step Incident Response Pipeline -->
+        <div class="pipeline-flow">
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">1</div>
+            <h4>Collecte & Filtrage</h4>
+            <p>Ingestion des logs systèmes et des flux réseaux via les agents Wazuh et le pare-feu <strong>FortiGate</strong>.</p>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">2</div>
+            <h4>Analyse & Détection</h4>
+            <p>Corrélation en temps réel par <strong>Wazuh Manager & Indexer</strong>, identification des tactiques MITRE ATT&CK.</p>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">3</div>
+            <h4>Supervision Grafana</h4>
+            <p>Agrégation des métriques d'infrastructure (CPU, débit 8.4 Gbps) et alertes de sécurité sur dashboard unifié.</p>
+          </div>
+          <div class="pipeline-step">
+            <div class="pipeline-step-num">4</div>
+            <h4>Réponse TheHive</h4>
+            <p>Génération automatique de tickets et cas d'incidents vers <strong>TheHive</strong> pour investigation SOC.</p>
+          </div>
+        </div>
+
+        <!-- SIEM Deliverables Matrix -->
+        <div class="siem-deliverables-grid">
+          <div class="deliverable-card">
+            <h4>🛡️ Déploiement SIEM</h4>
+            <ul>
+              <li>Installation et configuration de Wazuh Manager, Indexer & Dashboard.</li>
+              <li>Virtualisation des sondes et agents sur environnement GNS3.</li>
+              <li>Création de règles personnalisées de détection d'attaques.</li>
+            </ul>
+          </div>
+          <div class="deliverable-card">
+            <h4>🔒 Sécurité & Réseau FortiGate</h4>
+            <ul>
+              <li>Modélisation de la topologie réseau segmentée (DMZ, LAN, SecOps).</li>
+              <li>Configuration NAT centralisée et politiques de filtrage strictes.</li>
+              <li>Résolution des incidents de connectivité et routage IP.</li>
+            </ul>
+          </div>
+          <div class="deliverable-card">
+            <h4>📊 Monitoring & Alerting</h4>
+            <ul>
+              <li>Dashboard unifié Grafana couplé à Zabbix pour métriques serveurs.</li>
+              <li>Intégration du webhook Wazuh vers TheHive pour la traçabilité.</li>
+              <li>Documentation technique détaillée d'exploitation SOC.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Flagship Project 2: Beflextravel Web Platform (Mission Freelance)
+       ========================================================================== -->
+  <section class="featured-project" id="beflex-project">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">🚀 Mission Freelance & Full-Stack</span>
+        <h2 class="section-title">Plateforme Web <span class="gradient-text">Beflextravel</span></h2>
+        <p class="section-subtitle">Conception et développement d'une plateforme web complète de réservation de voyages et d'excursions à Marrakech en tant que <strong>Développeur Freelance</strong>.</p>
+      </div>
+
+      <div class="beflex-card">
+        <div class="beflex-grid">
+          <div class="beflex-text">
+            <div class="beflex-tag-row">
+              <span class="beflex-tag" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">💼 Projet Freelance</span>
+              <span class="beflex-tag">Next.js 16 (App Router)</span>
+              <span class="beflex-tag">React 19</span>
+              <span class="beflex-tag">Supabase Backend</span>
+              <span class="beflex-tag">Tailwind CSS 4</span>
+              <span class="beflex-tag">Framer Motion</span>
+            </div>
+
+            <h3 class="beflex-title">Beflextravel — Marrakech Tours & Excursions</h3>
+
+            <p class="beflex-description">
+              Projet réalisé en <strong>Freelance</strong> pour l'agence <strong>Beflextravel</strong>. J'ai pris en charge l'architecture complète, de la conception UI/UX à l'intégration backend avec <strong>Supabase</strong> : système de réservation en ligne interactif (balades en chameau, vols en montgolfière, circuits désert, transferts privés), espace administration, authentification sécurisée et module d'avis clients.
+            </p>
+
+            <ul class="beflex-features-list">
+              <li><span class="check-icon">✓</span> <strong>Rôle :</strong> Développeur Full-Stack Freelance (Conception, Dev, Déploiement)</li>
+              <li><span class="check-icon">✓</span> <strong>Architecture :</strong> Next.js 16 (App Router) & React 19 Server Components</li>
+              <li><span class="check-icon">✓</span> <strong>Backend & Données :</strong> Supabase Auth, PostgreSQL & Storage</li>
+              <li><span class="check-icon">✓</span> <strong>Interface Utilisateur :</strong> Design Dark Luxury ultra-fluide avec Framer Motion</li>
+              <li><span class="check-icon">✓</span> <strong>Fonctionnalités :</strong> Réservations interactives, avis vérifiés, back-office admin</li>
+              <li><span class="check-icon">✓</span> <strong>Production :</strong> Application 100% opérationnelle en ligne et code source documenté</li>
+            </ul>
+
+            <div class="beflex-cta-group">
+              <a href="https://beflextravel.com" target="_blank" rel="noopener noreferrer" class="btn btn-emerald" style="gap: 0.5rem;">
+                <span>🌐 Visiter le Site en Ligne : beflextravel.com</span>
+              </a>
+              <a href="https://github.com/mountassir-cha/be-flex-travel.git" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="gap: 0.5rem;">
+                <span>🐙 Code Source sur GitHub</span>
+              </a>
+            </div>
+
+            <div style="margin-top: 1rem; font-family: var(--font-mono); font-size: 0.8rem; color: #94a3b8;">
+              <span>🔗 Dépôt Git : </span>
+              <a href="https://github.com/mountassir-cha/be-flex-travel.git" target="_blank" style="color: #00f2fe; text-decoration: underline;">https://github.com/mountassir-cha/be-flex-travel.git</a>
+            </div>
+          </div>
+
+          <!-- Interactive Travel App Interactive Mockup Preview -->
+          <div class="travel-mockup-wrapper">
+            <div class="mockup-topbar">
+              <div class="terminal-dots">
+                <span class="t-dot t-dot-red"></span>
+                <span class="t-dot t-dot-yellow"></span>
+                <span class="t-dot t-dot-green"></span>
+              </div>
+              <a href="https://beflextravel.com" target="_blank" class="mockup-url-bar" style="text-decoration: none;" title="Ouvrir le site en ligne">
+                <span>🔒 https://beflextravel.com</span>
+                <span style="margin-left: auto; color: #34d399; font-size: 0.7rem;">● En Ligne ↗</span>
+              </a>
+            </div>
+
+            <div class="travel-app-preview">
+              <span class="preview-hero-badge">✦ Experience Marrakech — Mission Freelance</span>
+              <h4 class="preview-hero-title">Discover Morocco's Magic with Beflextravel</h4>
+              <p style="font-size: 0.8rem; color: #94a3b8;">Book camel rides, desert tours, day excursions & private transfers in Marrakech.</p>
+
+              <div class="preview-search-box">
+                <div class="preview-search-item">
+                  <span>Destination</span>
+                  <strong>Sahara / Agafay</strong>
+                </div>
+                <div class="preview-search-item">
+                  <span>Type</span>
+                  <strong>Desert & Quad</strong>
+                </div>
+                <a href="https://beflextravel.com" target="_blank" class="btn btn-emerald btn-sm" style="padding: 0.3rem 0.75rem; text-decoration: none;">Visiter</a>
+              </div>
+
+              <div class="preview-card-grid">
+                <div class="preview-tour-card">
+                  <div class="preview-tour-img">🐪</div>
+                  <div class="preview-tour-title">Sunset Camel Ride & Dinner</div>
+                  <div class="preview-tour-price">450 MAD / pers</div>
+                </div>
+                <div class="preview-tour-card">
+                  <div class="preview-tour-img">🎈</div>
+                  <div class="preview-tour-title">Atlas Hot Air Balloon Flight</div>
+                  <div class="preview-tour-price">1800 MAD / pers</div>
+                </div>
+              </div>
+
+              <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+                <span style="font-size: 0.75rem; color: #34d399;">● Supabase Connected & Auth Ready</span>
+                <a href="https://beflextravel.com" target="_blank" style="font-size: 0.75rem; color: #00f2fe; text-decoration: underline; font-weight: 600;">Ouvrir beflextravel.com ↗</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Experience Timeline
+       ========================================================================== -->
+  <section class="experience-section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Parcours Professionnel</span>
+        <h2 class="section-title">Expériences en <span class="gradient-text">Entreprise & Freelance</span></h2>
+        <p class="section-subtitle">Mise en pratique de mes compétences en milieu industriel, dans les services numériques et en freelance.</p>
+      </div>
+
+      <div class="timeline">
+        <!-- Experience 1: Union IT Services (2026) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Stagiaire — Service Informatique (Projet SIEM)</h3>
+                <span class="timeline-company">Union IT Services</span>
+              </div>
+              <span class="timeline-badge">2026</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Déploiement et virtualisation d'un environnement SIEM complet (<strong>Wazuh Manager, Indexer, Dashboard</strong>) sur une infrastructure simulée sous <strong>GNS3</strong>.</li>
+              <li>Modélisation et sécurisation de l'architecture réseau : segmentation, pare-feu <strong>FortiGate</strong>, configuration NAT centralisée et plan d'adressage IP.</li>
+              <li>Mise en place d'un tableau de bord de supervision unifié sous <strong>Grafana</strong>, agrégeant les indicateurs infrastructure et sécurité (charge FortiGate, intrusions bloquées, événements Wazuh).</li>
+              <li>Intégration du pipeline d'alerting Wazuh vers <strong>TheHive</strong> pour la gestion et le suivi des incidents de sécurité.</li>
+              <li>Diagnostic et résolution d'incidents réseau et de connectivité récurrents au sein de l'environnement virtualisé.</li>
+            </ul>
+            <div class="timeline-skills-tags">
+              <span class="t-skill-tag">Wazuh</span>
+              <span class="t-skill-tag">FortiGate</span>
+              <span class="t-skill-tag">Grafana</span>
+              <span class="t-skill-tag">TheHive</span>
+              <span class="t-skill-tag">Zabbix</span>
+              <span class="t-skill-tag">GNS3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2: Freelance Beflextravel (2025 - 2026) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Développeur Full-Stack (Mission Freelance)</h3>
+                <span class="timeline-company">Beflextravel (beflextravel.com)</span>
+              </div>
+              <span class="timeline-badge">2025 — 2026</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Conception, développement et mise en production de la plateforme web de réservation de voyages et activités touristiques.</li>
+              <li>Implémentation d'une architecture moderne avec <strong>Next.js 16, React 19, Tailwind CSS et Supabase</strong>.</li>
+              <li>Création d'un système complet de gestion des réservations, espace client authentifié et tableau de bord administrateur.</li>
+            </ul>
+            <div class="timeline-skills-tags">
+              <span class="t-skill-tag">Freelance</span>
+              <span class="t-skill-tag">Next.js 16</span>
+              <span class="t-skill-tag">Supabase</span>
+              <span class="t-skill-tag">React 19</span>
+              <span class="t-skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3: LafargeHolcim (2025) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Stagiaire — Service Informatique</h3>
+                <span class="timeline-company">LafargeHolcim, Bouskoura</span>
+              </div>
+              <span class="timeline-badge">2025</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Contribution active au développement d'une application de <strong>gestion des stocks</strong> pour un environnement industriel à haute disponibilité.</li>
+              <li>Analyse des besoins métier et participation à la conception de solutions informatiques répondant aux exigences opérationnelles du site.</li>
+              <li>Modélisation de la base de données et implémentation des flux de traçabilité des consommables.</li>
+            </ul>
+            <div class="timeline-skills-tags">
+              <span class="t-skill-tag">Développement Web</span>
+              <span class="t-skill-tag">Gestion des Stocks</span>
+              <span class="t-skill-tag">Bases de Données</span>
+              <span class="t-skill-tag">Analyse Métier</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 4: Ciments du Maroc (2022) -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-title">Stagiaire — Service Qualité et Environnement</h3>
+                <span class="timeline-company">Ciments du Maroc</span>
+              </div>
+              <span class="timeline-badge">2022</span>
+            </div>
+            <ul class="timeline-list">
+              <li>Participation au développement d'une application de <strong>gestion et de suivi des indicateurs qualité et environnement</strong>.</li>
+              <li>Mise en pratique des exigences normatives (ISO) et opérationnelles du service qualité.</li>
+              <li>Automatisation de la génération de rapports de conformité périodiques.</li>
+            </ul>
+            <div class="timeline-skills-tags">
+              <span class="t-skill-tag">Indicateurs Qualité</span>
+              <span class="t-skill-tag">Automatisation</span>
+              <span class="t-skill-tag">Normes ISO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Skills & Technical Arsenal
+       ========================================================================== -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Compétences & Arsenal</span>
+        <h2 class="section-title">Expertise <span class="gradient-text">Technique</span></h2>
+        <p class="section-subtitle">Un éventail complet combinant sécurité défensive, systèmes, réseaux et génie logiciel.</p>
+      </div>
+
+      <div class="skills-filter-row">
+        <button class="skill-filter-btn active" data-filter="all">Toutes les Compétences</button>
+        <button class="skill-filter-btn" data-filter="security">Sécurité & SIEM</button>
+        <button class="skill-filter-btn" data-filter="dev">Développement Logiciel</button>
+        <button class="skill-filter-btn" data-filter="system">Systèmes & Réseaux</button>
+        <button class="skill-filter-btn" data-filter="soft">Transversales & Langues</button>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Security / SIEM -->
+        <div class="skill-card" data-category="security">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">🛡️</div>
+            <div>
+              <div class="skill-card-title">SIEM & Détection</div>
+              <div class="skill-card-category">Sécurité Défensive</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Déploiement d'architectures de détection, corrélation et réponse automatisée.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Wazuh Manager</span>
+            <span class="skill-badge">Wazuh Indexer</span>
+            <span class="skill-badge">TheHive</span>
+            <span class="skill-badge">MITRE ATT&CK</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="security">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">🔒</div>
+            <div>
+              <div class="skill-card-title">Réseaux & Pare-Feu</div>
+              <div class="skill-card-category">Sécurité Réseau</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Configuration d'appliances réseau et segmentation d'infrastructures.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">FortiGate Firewall</span>
+            <span class="skill-badge">GNS3 Virtualisation</span>
+            <span class="skill-badge">NAT & Adressage IP</span>
+            <span class="skill-badge">Segmentation DMZ</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="security">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">📊</div>
+            <div>
+              <div class="skill-card-title">Monitoring & Alerting</div>
+              <div class="skill-card-category">Supervision</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Tableaux de bord opérationnels et collecte de télémétrie en direct.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Grafana</span>
+            <span class="skill-badge">Zabbix Server</span>
+            <span class="skill-badge">SNMP / Syslog</span>
+            <span class="skill-badge">Pipelines Alerting</span>
+          </div>
+        </div>
+
+        <!-- Development -->
+        <div class="skill-card" data-category="dev">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">💻</div>
+            <div>
+              <div class="skill-card-title">Langages de Programmation</div>
+              <div class="skill-card-category">Développement</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Algorithmique, scripting de sécurité et programmation orientée objet.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Java</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">JavaScript (ES6+)</span>
+            <span class="skill-badge">PHP</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="dev">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">⚡</div>
+            <div>
+              <div class="skill-card-title">Frameworks Web & Cloud</div>
+              <div class="skill-card-category">Full-Stack</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Création d'applications modernes, réactives et sécurisées.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Next.js 16</span>
+            <span class="skill-badge">React 19</span>
+            <span class="skill-badge">Tailwind CSS</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">HTML5 / CSS3</span>
+          </div>
+        </div>
+
+        <!-- Systems & DB -->
+        <div class="skill-card" data-category="system">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">⚙️</div>
+            <div>
+              <div class="skill-card-title">Systèmes & Virtualisation</div>
+              <div class="skill-card-category">Infrastructure</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Administration d'environnements virtualisés et systèmes distribués.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Linux / Unix</span>
+            <span class="skill-badge">Réseaux TCP/IP</span>
+            <span class="skill-badge">Virtualisation</span>
+            <span class="skill-badge">Systèmes Distribués</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="system">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">🗄️</div>
+            <div>
+              <div class="skill-card-title">Bases de Données</div>
+              <div class="skill-card-category">Data & Storage</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Gestion des données relationnelles, NoSQL et backend serverless.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">PostgreSQL</span>
+            <span class="skill-badge">Supabase</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">NoSQL</span>
+          </div>
+        </div>
+
+        <!-- Soft Skills & Languages -->
+        <div class="skill-card" data-category="soft">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">🤝</div>
+            <div>
+              <div class="skill-card-title">Compétences Transversales</div>
+              <div class="skill-card-category">Méthodologies</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Capacités relationnelles, agilité et rigueur technique.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Méthode Agile (Scrum)</span>
+            <span class="skill-badge">Esprit critique</span>
+            <span class="skill-badge">Communication</span>
+            <span class="skill-badge">Résolution de problèmes</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="soft">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">🌐</div>
+            <div>
+              <div class="skill-card-title">Langues & Loisirs</div>
+              <div class="skill-card-category">Personnel</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Communication multilingue et centres d'intérêt stimulant la réflexion.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Arabe (Maternelle)</span>
+            <span class="skill-badge">Français (Courant)</span>
+            <span class="skill-badge">Anglais (Professionnel)</span>
+            <span class="skill-badge">Échecs & Rubik's Cube</span>
+            <span class="skill-badge">Football & Voyage</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Education Section
+       ========================================================================== -->
+  <section class="education-section" id="education">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Parcours Académique</span>
+        <h2 class="section-title">Formation & <span class="gradient-text">Diplômes</span></h2>
+        <p class="section-subtitle">Un cursus solide alliant sciences fondamentales et spécialisation approfondie en cybersécurité.</p>
+      </div>
+
+      <div class="education-grid">
+        <div class="edu-card">
+          <span class="edu-year">2023 — 2026</span>
+          <h3 class="edu-school">École Marocaine des Sciences de l'Ingénieur (EMSI)</h3>
+          <div class="edu-degree">Cycle d'Ingénieur — Spécialité Cybersécurité (5e Année)</div>
+          <p class="edu-desc">
+            Formation approfondie en sécurité des infrastructures, cryptographie, analyse des vulnérabilités, architectures SOC/SIEM, gouvernance des SI et développement d'applications sécurisées.
+          </p>
+        </div>
+
+        <div class="edu-card">
+          <span class="edu-year">2021 — 2023</span>
+          <h3 class="edu-school">Faculté des Sciences Semlalia Marrakech (FSSM)</h3>
+          <div class="edu-degree">Bac+1 — Sciences de la Matière Physique</div>
+          <p class="edu-desc">
+            Acquisition de bases solides en mathématiques appliquées, physique, modélisation théorique et raisonnement logique structuré.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Contact Section
+       ========================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Prendre Contact</span>
+        <h2 class="section-title">Discutons de Votre <span class="gradient-text">Projet ou Opportunité</span></h2>
+        <p class="section-subtitle">Je suis à votre disposition pour toute opportunité professionnelle, projet ou collaboration technique.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information -->
+        <div class="contact-info-card">
+          <h3 class="contact-info-title">Coordonnées Directes</h3>
+          <p class="contact-info-desc">
+            N'hésitez pas à me joindre directement par téléphone, WhatsApp, email ou via LinkedIn. Je réponds rapidement !
+          </p>
+
+          <div class="contact-channels">
+            <a href="tel:+212766908381" class="contact-channel-item">
+              <div class="channel-icon">📞</div>
+              <div class="channel-details">
+                <span>Téléphone & WhatsApp</span>
+                <strong>+212 7 66 90 83 81</strong>
+              </div>
+            </a>
+
+            <a href="mailto:montassirchaghough5@gmail.com" class="contact-channel-item">
+              <div class="channel-icon">✉️</div>
+              <div class="channel-details">
+                <span>Email Professionnel</span>
+                <strong>montassirchaghough5@gmail.com</strong>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/mountassir-chaghough" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-icon">💼</div>
+              <div class="channel-details">
+                <span>Profil LinkedIn</span>
+                <strong>linkedin.com/in/mountassir-chaghough</strong>
+              </div>
+            </a>
+
+            <a href="https://github.com/mountassir-cha" target="_blank" rel="noopener noreferrer" class="contact-channel-item">
+              <div class="channel-icon">🐙</div>
+              <div class="channel-details">
+                <span>Dépôts GitHub</span>
+                <strong>github.com/mountassir-cha</strong>
+              </div>
+            </a>
+
+            <div class="contact-channel-item">
+              <div class="channel-icon">📍</div>
+              <div class="channel-details">
+                <span>Localisation</span>
+                <strong>Marrakech, Mhamid, Lot Elbaraka N105</strong>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/212766908381?text=Bonjour%20Mountassir,%20j'ai%20consult%C3%A9%20votre%20portfolio%20cybers%C3%A9curit%C3%A9..." target="_blank" rel="noopener noreferrer" class="btn btn-emerald" style="width: 100%;">
+            <span>💬 Écrire directement sur WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Interactive Contact Form -->
+        <div class="contact-form-card">
+          <h3 class="contact-info-title">Envoyer un Message Direct</h3>
+          <p class="contact-info-desc">Remplissez ce formulaire : le message sera transmis directement sur <strong>montassirchaghough5@gmail.com</strong>.</p>
+
+          <form id="portfolio-contact-form" action="https://formsubmit.co/montassirchaghough5@gmail.com" method="POST">
+            <!-- FormSubmit Auto-Configuration -->
+            <input type="hidden" name="_subject" value="🚀 Nouveau message depuis le Portfolio Cybersécurité">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="Merci pour votre message ! J'ai bien reçu votre prise de contact et je vous répondrai dans les plus brefs délais. — Chaghough Mountassir">
+            <input type="text" name="_honey" style="display:none">
+
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Votre Nom Complet / Entreprise *</label>
+              <input type="text" id="contact-name" name="name" class="form-control" placeholder="ex: Recruteur Tech / Entreprise SOC" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Votre Adresse Email *</label>
+              <input type="email" id="contact-email" name="email" class="form-control" placeholder="nom@entreprise.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Sujet du Message *</label>
+              <input type="text" id="contact-subject" name="subject" class="form-control" placeholder="ex: Opportunité / Proposition Cybersécurité" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message / Détails *</label>
+              <textarea id="contact-message" name="message" class="form-control" placeholder="Bonjour Mountassir, nous avons consulté vos projets SIEM et Beflextravel..." required></textarea>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary" style="width: 100%;">
+              <span id="btn-submit-text">🚀 Transmettre le Message</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span>Chaghough Mountassir</span> — <span class="gradient-text">Ingénieur Cybersécurité</span>
+        </div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#about" class="nav-link">À Propos</a>
+          <a href="#siem-project" class="nav-link">Projet SIEM</a>
+          <a href="#beflex-project" class="nav-link">Beflextravel</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Retour en haut">↑</button>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Chaghough Mountassir. Tous droits réservés. EMSI Marrakech.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: #00f2fe;">Secured with Wazuh • Built with Passion</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Image Lightbox & CV Modal
+       ========================================================================== -->
+  <!-- Image Lightbox Modal -->
+  <div class="modal-backdrop" id="image-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Aperçu Haute Définition</h3>
+        <button class="modal-close-btn" id="image-modal-close" aria-label="Fermer">✕</button>
+      </div>
+      <div class="modal-body">
+        <img src="" alt="" id="modal-img" class="modal-img">
+      </div>
+    </div>
+  </div>
+
+  <!-- CV Preview Modal -->
+  <div class="modal-backdrop" id="cv-modal">
+    <div class="modal-container" style="max-width: 800px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Curriculum Vitae — Chaghough Mountassir</h3>
+        <button class="modal-close-btn" id="cv-modal-close">✕</button>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <img src="assets/cv_original.png" alt="CV Chaghough Mountassir" style="width: 100%; max-height: 70vh; object-fit: contain; border-radius: 8px; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="assets/cv_original.png" download="CV_Chaghough_Mountassir.png" class="btn btn-primary">
+            <span>📥 Télécharger le CV (Image HD)</span>
+          </a>
+          <button onclick="window.print()" class="btn btn-secondary">
+            <span>🖨️ Imprimer la Page</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Engine -->
+  <script src="script.js"></script>
+</body>
+</html>
