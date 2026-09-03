@@ -167,6 +167,8 @@
                 <button type="button" class="term-ping-chip" data-ping="siem">📡 ping siem</button>
                 <button type="button" class="term-ping-chip" data-ping="ocp">⛓️ ping ocp</button>
                 <button type="button" class="term-ping-chip" data-ping="zabbix">📊 ping zabbix</button>
+                <button type="button" class="term-ping-chip" data-ping="ueba">🛡️ ping ueba</button>
+                <button type="button" class="term-ping-chip" data-ping="glpi">📋 ping glpi</button>
                 <button type="button" class="term-ping-chip" data-ping="beflex">💼 ping beflex</button>
               </div>
             </div>
@@ -757,6 +759,131 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Academic SecOps Projects: UEBA (Gestion des Intrusions) & GLPI (Gestion des Incidents)
+       ========================================================================== -->
+  <section class="featured-project" id="academic-projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.35); color: #fbbf24;">🛡️ Spécialisation SecOps — Projets Académiques EMSI</span>
+        <h2 class="section-title">Gestion des <span class="gradient-text" style="background: linear-gradient(135deg, #f59e0b 0%, #10b981 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Intrusions & Incidents</span></h2>
+        <p class="section-subtitle">Travaux pratiques et projets d'ingénierie avancée réalisés dans le cadre des modules <strong>Gestion des Intrusions</strong> (UEBA sur logs d'authentification) et <strong>Gestion des Incidents</strong> (Ticketing & Parc GLPI).</p>
+      </div>
+
+      <div class="academic-projects-grid">
+        <!-- Project 1: UEBA (Gestion des Intrusions) -->
+        <div class="academic-project-card ueba-card" id="ueba-project">
+          <div>
+            <div class="academic-module-badge badge-intrusion">
+              <span>🎯 Module : Gestion des Intrusions</span>
+            </div>
+            
+            <div class="beflex-tag-row">
+              <span class="beflex-tag" style="color: #fbbf24; border-color: rgba(245, 158, 11, 0.4);">UEBA Analytics</span>
+              <span class="beflex-tag">Logs d'Authentification</span>
+              <span class="beflex-tag">Risk Scoring</span>
+              <span class="beflex-tag">Détection d'Anomalies</span>
+              <span class="beflex-tag">Python & SIEM</span>
+            </div>
+
+            <h3 class="academic-project-title">13. UEBA Simplifié sur Logs d'Authentification</h3>
+
+            <p class="academic-project-desc">
+              Développement d'un moteur d'analyse comportementale (<strong>User & Entity Behavior Analytics</strong>) appliqué aux flux de logs d'authentification (Windows Security Events, SSH, VPN). Le système établit un profil de référence nominal pour chaque utilisateur et calcule un score de risque dynamique pour identifier en temps réel les intrusions furtives.
+            </p>
+
+            <ul class="academic-features">
+              <li><span class="check-icon">✓</span> <strong>Modélisation Comportementale :</strong> Apprentissage des habitudes d'accès (horaires habituels, adresses IP sources, postes clients fréquents).</li>
+              <li><span class="check-icon">✓</span> <strong>Détection d'Attaques Multiples :</strong> Identification automatisée des attaques par force brute, credential stuffing, spray attacks et voyages impossibles (<em>impossible travel</em>).</li>
+              <li><span class="check-icon">✓</span> <strong>Calcul de Score de Risque :</strong> Algorithme de scoring pondéré attribuant un niveau de criticité (Low, Medium, High Alert) à chaque session anormale.</li>
+              <li><span class="check-icon">✓</span> <strong>Génération d'Alertes SOC :</strong> Notification immédiate vers les équipes de réponse à incident en cas de franchissement de seuil.</li>
+            </ul>
+          </div>
+
+          <!-- Interactive Live Preview for UEBA -->
+          <div>
+            <div class="academic-preview-box">
+              <div class="ueba-risk-meter">
+                <span style="font-size: 0.78rem; font-family: var(--font-mono); color: #cbd5e1;">👤 User: <strong>sec_admin</strong> (Session #9412)</span>
+                <span class="risk-score-badge risk-high" id="ueba-risk-badge">🚨 Risk Score: 88/100 (HIGH)</span>
+              </div>
+              <div class="ueba-log-entry" id="ueba-log-display">
+                [ALERT_UEBA] 03:22:15 UTC — Anomalous Login from IP 198.51.100.44 (Geo: Non-standard) | Normal Hours: 08:00-19:00 | Brute-force burst detected (5 failed attempts before success).
+              </div>
+            </div>
+
+            <div class="beflex-cta-group" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" id="btn-simulate-ueba" style="background: linear-gradient(135deg, #d97706, #b45309); border: none; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <span>⚡ Simuler Détection UEBA</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: GLPI (Gestion des Incidents) -->
+        <div class="academic-project-card glpi-card" id="glpi-project">
+          <div>
+            <div class="academic-module-badge badge-incident">
+              <span>📋 Module : Gestion des Incidents</span>
+            </div>
+
+            <div class="beflex-tag-row">
+              <span class="beflex-tag" style="color: #34d399; border-color: rgba(16, 185, 129, 0.4);">GLPI Helpdesk</span>
+              <span class="beflex-tag">Processus ITIL</span>
+              <span class="beflex-tag">Gestion de Parc</span>
+              <span class="beflex-tag">Ticketing & SLA</span>
+              <span class="beflex-tag">FusionInventory</span>
+            </div>
+
+            <h3 class="academic-project-title">Gestion des Incidents & Parc Informatique — GLPI</h3>
+
+            <p class="academic-project-desc">
+              Déploiement, configuration et exploitation de la solution open-source <strong>GLPI (Gestionnaire Libre de Parc Informatique)</strong> pour la gouvernance des incidents de sécurité et la gestion exhaustive des actifs IT selon le référentiel des meilleures pratiques <strong>ITIL</strong>.
+            </p>
+
+            <ul class="academic-features">
+              <li><span class="check-icon">✓</span> <strong>Cycle de Vie des Incidents :</strong> Définition des matrices d'impact/urgence, workflows d'escalade, attribution aux techniciens et respect des SLA de résolution.</li>
+              <li><span class="check-icon">✓</span> <strong>Inventaire Automatisé du Parc :</strong> Remontée dynamique des configurations matérielles, logiciels installés et vulnérabilités via agents GLPI / FusionInventory.</li>
+              <li><span class="check-icon">✓</span> <strong>Base de Connaissances & Post-Mortem :</strong> Capitalisation des procédures de remédiation et analyse des causes racines (Root Cause Analysis).</li>
+              <li><span class="check-icon">✓</span> <strong>Pilotage des Métriques SOC :</strong> Tableaux de bord de suivi du MTTR (Mean Time to Resolve), volume de tickets et taux de conformité de service.</li>
+            </ul>
+          </div>
+
+          <!-- Interactive Live Preview for GLPI -->
+          <div>
+            <div class="academic-preview-box">
+              <div class="glpi-stats-row">
+                <div class="glpi-stat-item">
+                  <div class="glpi-stat-val" id="glpi-open-tickets">14</div>
+                  <div class="glpi-stat-lbl">Tickets Traités</div>
+                </div>
+                <div class="glpi-stat-item">
+                  <div class="glpi-stat-val">18 min</div>
+                  <div class="glpi-stat-lbl">MTTR Résolution</div>
+                </div>
+                <div class="glpi-stat-item">
+                  <div class="glpi-stat-val">99.2%</div>
+                  <div class="glpi-stat-lbl">Conformité SLA</div>
+                </div>
+              </div>
+
+              <div class="glpi-ticket-line" id="glpi-ticket-display">
+                <span>🎫 #INC-2026-082 : Isolation poste infecté VLAN 20</span>
+                <span style="color: #34d399; font-weight: 700;">● CLOS / RÉSOLU</span>
+              </div>
+            </div>
+
+            <div class="beflex-cta-group" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" id="btn-simulate-glpi" style="background: linear-gradient(135deg, #059669, #047857); border: none; font-size: 0.85rem; padding: 0.5rem 1rem;">
+                <span>📋 Ouvrir Ticket Incident GLPI</span>
+              </button>
             </div>
           </div>
         </div>

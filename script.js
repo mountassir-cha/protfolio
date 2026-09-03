@@ -157,6 +157,20 @@ function initTerminalCLI() {
 
     gns3: () => commands.zabbix(),
 
+    ueba: () => `
+<div class="t-line t-highlight">🛡️ MODULE GESTION DES INTRUSIONS — UEBA LOGS AUTHENTIFICATION :</div>
+<div class="t-line">▸ Intitulé : 13. UEBA simplifié sur logs d'authentification</div>
+<div class="t-line">▸ Objectif : Détection proactive des compromissions de comptes & intrusions furtives</div>
+<div class="t-line">▸ Analyse : Logs Windows Event, SSH, VPN, détection brute-force & impossible travel</div>
+<div class="t-line">▸ Moteur : Risk Scoring dynamique pondéré et seuils d'alerting SOC en temps réel</div>`,
+
+    glpi: () => `
+<div class="t-line t-highlight">📋 MODULE GESTION DES INCIDENTS — TICKETING & PARC GLPI :</div>
+<div class="t-line">▸ Intitulé : Gestion des Incidents & Parc Informatique avec GLPI</div>
+<div class="t-line">▸ Référentiel : Alignement sur les bonnes pratiques ITIL (Incident Management & SLA)</div>
+<div class="t-line">▸ Fonctionnalités : Matrice impact/urgence, inventaire automatique FusionInventory, MTTR</div>
+<div class="t-line">▸ Livrables : Tableaux de bord de suivi, base de connaissances et post-mortem</div>`,
+
     beflextravel: () => `
 <div class="t-line t-highlight">💼 BEFLEXTRAVEL — MISSION FREELANCE & APPLICATION WEB :</div>
 <div class="t-line">▸ Statut : Développeur Full-Stack Freelance</div>
@@ -168,7 +182,7 @@ function initTerminalCLI() {
 
     skills: () => `
 <div class="t-line t-highlight">💻 ARSENAL TECHNIQUE :</div>
-<div class="t-line">▸ <span class="t-success">Sécurité/SIEM :</span> Wazuh, FortiGate, TheHive, Zabbix, Grafana, GNS3, Wireshark</div>
+<div class="t-line">▸ <span class="t-success">Sécurité/SIEM :</span> Wazuh, FortiGate, TheHive, Zabbix, GLPI, UEBA, GNS3, Wireshark</div>
 <div class="t-line">▸ <span class="t-success">Web3 & Blockchain :</span> MetaMask, IPFS (CID), HMAC-SHA256, Smart Contracts, Web3.js</div>
 <div class="t-line">▸ <span class="t-success">Langages & Dev :</span> Python, Java, C++, JavaScript (ES6+), React, Next.js, Node.js, UML</div>
 <div class="t-line">▸ <span class="t-success">Bases de Données :</span> MySQL, PostgreSQL, Supabase, Storage IPFS</div>
@@ -203,6 +217,20 @@ function initTerminalCLI() {
           sectionId: 'zabbix-project',
           cardSelector: '.zabbix-card'
         },
+        ueba: {
+          ip: '192.168.20.50',
+          host: 'ueba-analyzer.emsi-secops.lab',
+          name: 'UEBA Détection d\'Intrusions (Logs Auth)',
+          sectionId: 'ueba-project',
+          cardSelector: '.ueba-card'
+        },
+        glpi: {
+          ip: '192.168.30.80',
+          host: 'glpi-helpdesk.itil-incident.lan',
+          name: 'Gestion des Incidents & Parc (GLPI)',
+          sectionId: 'glpi-project',
+          cardSelector: '.glpi-card'
+        },
         beflex: {
           ip: '104.21.48.12',
           host: 'beflextravel.com',
@@ -218,6 +246,8 @@ function initTerminalCLI() {
 <div class="t-line">▸ <span class="t-success">ping siem</span>    : Tester le nœud SecOps SIEM & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping ocp</span>     : Tester la passerelle Web3 OCP & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping zabbix</span>  : Tester le serveur de télémétrie Zabbix & ouvrir la session</div>
+<div class="t-line">▸ <span class="t-success">ping ueba</span>    : Tester le moteur UEBA d'analyse comportementale & ouvrir la session</div>
+<div class="t-line">▸ <span class="t-success">ping glpi</span>    : Tester le serveur GLPI de gestion d'incidents & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping beflex</span>  : Tester la plateforme Beflextravel & ouvrir la session</div>`;
       }
 
@@ -236,6 +266,14 @@ function initTerminalCLI() {
         zabbix: 'zabbix', zabix: 'zabbix', zabiw: 'zabbix', zabbx: 'zabbix', zbx: 'zabbix',
         gns3: 'zabbix', gns: 'zabbix', telemetry: 'zabbix', monitoring: 'zabbix', cpu: 'zabbix', triggers: 'zabbix', items: 'zabbix',
         
+        // UEBA & Gestion des Intrusions variations & typos
+        ueba: 'ueba', intrusion: 'ueba', intrusions: 'ueba', ueba13: 'ueba', '13_ueba': 'ueba', '13': 'ueba',
+        behavior: 'ueba', anomaly: 'ueba', anomalie: 'ueba', logs: 'ueba', auth: 'ueba', authentification: 'ueba',
+        
+        // GLPI & Gestion des Incidents variations & typos
+        glpi: 'glpi', incident: 'glpi', incidents: 'glpi', helpdesk: 'glpi', ticketing: 'glpi', itil: 'glpi',
+        parc: 'glpi', inventory: 'glpi', fusion: 'glpi', sla: 'glpi', mttr: 'glpi',
+        
         // Beflextravel variations & typos
         beflex: 'beflex', beflextravel: 'beflex', 'beflex-travel': 'beflex', flex: 'beflex',
         travel: 'beflex', marrakech: 'beflex', tour: 'beflex', tours: 'beflex', freelance: 'beflex'
@@ -244,7 +282,7 @@ function initTerminalCLI() {
       let resolvedKey = aliases[raw];
 
       if (!resolvedKey) {
-        const canonical = ['siem', 'ocp', 'zabbix', 'beflex'];
+        const canonical = ['siem', 'ocp', 'zabbix', 'ueba', 'glpi', 'beflex'];
         for (const c of canonical) {
           if (raw.includes(c) || c.includes(raw) || getDistance(raw, c) <= 2) {
             resolvedKey = c;
@@ -255,7 +293,7 @@ function initTerminalCLI() {
 
       const info = targets[resolvedKey];
       if (!info) {
-        return `<div class="t-line" style="color:#ef4444;">❌ Hôte inconnu: "${escapeHtml(target)}". Cibles disponibles: siem, ocp, zabbix, beflex.</div>`;
+        return `<div class="t-line" style="color:#ef4444;">❌ Hôte inconnu: "${escapeHtml(target)}". Cibles disponibles: siem, ocp, zabbix, ueba, glpi, beflex.</div>`;
       }
 
       // Execute live ICMP ping simulation
@@ -902,6 +940,70 @@ function initProjectSimulations() {
         zabbixBtn.disabled = false;
         zabbixBtn.innerHTML = '<span>⚡ Simuler Corrélation Charge CPU</span>';
       }, 4500);
+    });
+  }
+
+  // UEBA Anomaly Detection Simulation
+  const uebaBtn = document.getElementById('btn-simulate-ueba');
+  const uebaBadge = document.getElementById('ueba-risk-badge');
+  const uebaLog = document.getElementById('ueba-log-display');
+
+  if (uebaBtn) {
+    let uebaState = 0;
+    const uebaScenarios = [
+      {
+        badge: '🚨 Risk Score: 94/100 (CRITICAL)',
+        class: 'risk-high',
+        log: "[ALERT_UEBA] 04:15:22 UTC — User 'finance_usr' logged in from Tor Exit Node (IP: 185.220.101.5) | Deviation: Access outside allowed working hours (08:00-18:00) | Immediate SOC quarantine triggered.",
+        toast: "🚨 Alerte UEBA : Connexion anormale détectée (Score: 94/100) — Session isolée !",
+        type: 'error'
+      },
+      {
+        badge: '⚠️ Risk Score: 62/100 (MEDIUM)',
+        class: 'risk-high',
+        log: "[WARNING_UEBA] 11:42:08 UTC — User 'dev_lead' accessed 42 sensitive files in 30s | Deviation: Download rate 6x higher than 30-day baseline | Monitoring rate limit.",
+        toast: "⚠️ Alerte UEBA : Volume de téléchargement inhabituel détecté (Score: 62/100).",
+        type: 'warning'
+      },
+      {
+        badge: '✓ Risk Score: 12/100 (NOMINAL)',
+        class: 'risk-low',
+        log: "[NORMAL_UEBA] 09:05:00 UTC — User 'm_chaghough' successful MFA login from trusted workstation (IP: 192.168.10.25) | Behavior consistent with baseline profile.",
+        toast: "✅ Analyse UEBA : Session conforme au profil nominal (Score: 12/100).",
+        type: 'success'
+      }
+    ];
+
+    uebaBtn.addEventListener('click', () => {
+      const scenario = uebaScenarios[uebaState % uebaScenarios.length];
+      uebaState++;
+
+      if (uebaBadge) {
+        uebaBadge.className = `risk-score-badge ${scenario.class}`;
+        uebaBadge.textContent = scenario.badge;
+      }
+      if (uebaLog) {
+        uebaLog.textContent = scenario.log;
+      }
+      showToast(scenario.toast, scenario.type);
+    });
+  }
+
+  // GLPI Incident Management Simulation
+  const glpiBtn = document.getElementById('btn-simulate-glpi');
+  const glpiCount = document.getElementById('glpi-open-tickets');
+  const glpiTicket = document.getElementById('glpi-ticket-display');
+
+  if (glpiBtn) {
+    let ticketCounter = 14;
+    glpiBtn.addEventListener('click', () => {
+      ticketCounter++;
+      if (glpiCount) glpiCount.textContent = ticketCounter;
+
+      if (glpiTicket) {
+        glpiTicket.innerHTML = `<span>🎫 #INC-2026-0${ticketCounter} : Alerte UEBA - Brute-Force bloqué sur passerelle VPN</span><span style="color: #fbbf24; font-weight: 700;">● EN COURS (Niv. 2)</span>`;
+      }
+      showToast(`📋 Nouveau ticket créé dans GLPI (#INC-2026-0${ticketCounter}) selon le cycle ITIL !`, 'info');
     });
   }
 }
