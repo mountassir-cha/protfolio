@@ -160,6 +160,7 @@ function initTerminalCLI() {
     ueba: () => `
 <div class="t-line t-highlight">🛡️ MODULE GESTION DES INTRUSIONS — UEBA LOGS AUTHENTIFICATION :</div>
 <div class="t-line">▸ Intitulé : 13. UEBA simplifié sur logs d'authentification</div>
+<div class="t-line">▸ GitHub : <a href="https://github.com/mountassir-cha/UEBA-Auth-Project.git" target="_blank" style="color:#00f2fe; text-decoration:underline;">github.com/mountassir-cha/UEBA-Auth-Project</a></div>
 <div class="t-line">▸ Objectif : Détection proactive des compromissions de comptes & intrusions furtives</div>
 <div class="t-line">▸ Analyse : Logs Windows Event, SSH, VPN, détection brute-force & impossible travel</div>
 <div class="t-line">▸ Moteur : Risk Scoring dynamique pondéré et seuils d'alerting SOC en temps réel</div>`,
