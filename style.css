@@ -211,6 +211,10 @@ a {
   overflow: hidden;
 }
 
+/* Mobile/Desktop label toggle */
+.btn-label-short { display: none; }
+.btn-label-full  { display: inline; }
+
 .btn-primary {
   background: var(--grad-cyan-blue);
   color: #040810;
@@ -2772,20 +2776,35 @@ textarea.form-control {
     line-height: 1.65;
   }
 
-  /* CTA buttons: 2-column grid on mobile, not full-width */
+  /* CTA buttons: flex wrap, 2 per row on mobile */
   .hero-cta-group {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
   }
 
   .hero-cta-group .btn {
-    font-size: 0.8rem;
-    padding: 0.6rem 0.75rem;
-    width: auto;
+    font-size: 0.78rem;
+    padding: 0.55rem 0.9rem;
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 0;
     justify-content: center;
     text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
+  /* CV button takes full row since it's alone */
+  .hero-cta-group .btn:last-child:nth-child(odd) {
+    flex: 1 1 100%;
+    max-width: 160px;
+    margin: 0 auto;
+  }
+
+  /* Switch to short labels on mobile */
+  .btn-label-full  { display: none; }
+  .btn-label-short { display: inline; }
 
   .hero-social-links {
     flex-wrap: wrap;
@@ -2793,8 +2812,8 @@ textarea.form-control {
   }
 
   .social-pill {
-    font-size: 0.8rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+    padding: 0.3rem 0.65rem;
   }
 
 
