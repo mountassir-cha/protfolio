@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initLanguageToggle();
   initTypingEffect();
+  initProjectSimulations();
 });
 
 /* ==========================================================================
@@ -115,15 +116,17 @@ function initTerminalCLI() {
 <div class="t-line t-highlight">⚡ Commandes Disponibles :</div>
 <div class="t-line">▸ <span class="t-success">whoami</span>          : Profil & Statut de Mountassir</div>
 <div class="t-line">▸ <span class="t-success">siem</span>            : Architecture SOC & SIEM (Union IT Services)</div>
+<div class="t-line">▸ <span class="t-success">ocp</span>             : Traçabilité Supply Chain Blockchain TSP (Groupe OCP)</div>
+<div class="t-line">▸ <span class="t-success">zabbix</span>          : Supervision Réseau & Corrélation CPU (GNS3)</div>
 <div class="t-line">▸ <span class="t-success">beflextravel</span>    : Projet Freelance Beflextravel (Next.js & Supabase)</div>
-<div class="t-line">▸ <span class="t-success">skills</span>          : Matrice de compétences cyber & dev</div>
+<div class="t-line">▸ <span class="t-success">skills</span>          : Matrice de compétences cyber, web3 & dev</div>
 <div class="t-line">▸ <span class="t-success">contact</span>         : Coordonnées directes (Téléphone, Email, etc.)</div>
 <div class="t-line">▸ <span class="t-success">clear</span>           : Effacer le terminal</div>`,
 
     whoami: () => `
 <div class="t-line">👤 <span class="t-highlight">Chaghough Mountassir</span> — 23 ans</div>
 <div class="t-line">🎓 Élève-Ingénieur en 5e année Cybersécurité à l'<span class="t-success">EMSI Marrakech</span>.</div>
-<div class="t-line">🛡️ Spécialiste : SIEM (Wazuh), SOC, FortiGate, Zabbix, TheHive, GNS3 & Développeur Full-Stack / Freelance.</div>`,
+<div class="t-line">🛡️ Spécialiste : SIEM (Wazuh), SOC, FortiGate, Zabbix/GNS3, Blockchain Web3 (Projet OCP TSP) & Développeur Full-Stack.</div>`,
 
     siem: () => `
 <div class="t-line t-highlight">🛡️ PROJET SIEM — UNION IT SERVICES (2026) :</div>
@@ -131,6 +134,28 @@ function initTerminalCLI() {
 <div class="t-line">▸ Segmentation & Pare-feu FortiGate (NAT, Politiques de filtrage).</div>
 <div class="t-line">▸ Dashboard Grafana unifié (Wazuh + Zabbix + FortiGate).</div>
 <div class="t-line">▸ Automatisation Alerting -> TheHive (Incident Response).</div>`,
+
+    ocp: () => `
+<div class="t-line t-highlight">⛓️ PROJET BLOCKCHAIN & SUPPLY CHAIN — GROUPE OCP (PRODUIT TSP) :</div>
+<div class="t-line">▸ Organisme : Office Chérifien des Phosphates (OCP Group)</div>
+<div class="t-line">▸ Produit : Triple Super Phosphate (TSP) — Engrais phosphaté certifié</div>
+<div class="t-line">▸ Web3 & MetaMask : Authentification décentralisée et signatures d'expédition</div>
+<div class="t-line">▸ Preuves Numériques : HMAC-SHA256 & Horodatage d'événements critiques</div>
+<div class="t-line">▸ Stockage Décentralisé : IPFS avec Content Identifier (CID)</div>
+<div class="t-line">▸ Qualité Chimique : Taux de Pentoxyde de phosphore (P₂O₅ ≥ 46%) validé</div>
+<div class="t-line">▸ Livrables : Passeport Digital PDF, QR Code, Frontend React, API REST & MySQL</div>`,
+
+    tsp: () => commands.ocp(),
+    blockchain: () => commands.ocp(),
+
+    zabbix: () => `
+<div class="t-line t-highlight">📊 PROJET SUPERVISION & TÉLÉMÉTRIE — GNS3 & ZABBIX :</div>
+<div class="t-line">▸ Infrastructure : Topologie multi-noeuds virtualisée sous GNS3</div>
+<div class="t-line">▸ Configuration Items : CPU Utilization, RAM Buffers, Traffic Ethernet, ICMP Ping</div>
+<div class="t-line">▸ Triggers & Alerting : Seuils dynamiques multi-sévérités (Warning, High, Disaster)</div>
+<div class="t-line">▸ Corrélation : Détection proactive d'anomalies lors des pics de charge CPU / Débit</div>`,
+
+    gns3: () => commands.zabbix(),
 
     beflextravel: () => `
 <div class="t-line t-highlight">💼 BEFLEXTRAVEL — MISSION FREELANCE & APPLICATION WEB :</div>
@@ -144,9 +169,10 @@ function initTerminalCLI() {
     skills: () => `
 <div class="t-line t-highlight">💻 ARSENAL TECHNIQUE :</div>
 <div class="t-line">▸ <span class="t-success">Sécurité/SIEM :</span> Wazuh, FortiGate, TheHive, Zabbix, Grafana, GNS3, Wireshark</div>
-<div class="t-line">▸ <span class="t-success">Langages :</span> Python, Java, C++, JavaScript (ES6+), PHP</div>
-<div class="t-line">▸ <span class="t-success">Web & DB :</span> Next.js 16, React 19, Node.js, PostgreSQL, MySQL, Supabase</div>
-<div class="t-line">▸ <span class="t-success">Systèmes :</span> Linux/Unix, TCP/IP, VLAN, Virtualisation (VMware, Proxmox)</div>`,
+<div class="t-line">▸ <span class="t-success">Web3 & Blockchain :</span> MetaMask, IPFS (CID), HMAC-SHA256, Smart Contracts, Web3.js</div>
+<div class="t-line">▸ <span class="t-success">Langages & Dev :</span> Python, Java, C++, JavaScript (ES6+), React, Next.js, Node.js, UML</div>
+<div class="t-line">▸ <span class="t-success">Bases de Données :</span> MySQL, PostgreSQL, Supabase, Storage IPFS</div>
+<div class="t-line">▸ <span class="t-success">Systèmes :</span> Linux/Unix, TCP/IP, VLAN, Virtualisation (VMware, GNS3)</div>`,
 
     contact: () => `
 <div class="t-line">📞 Téléphone & WhatsApp : <span class="t-highlight">+212 7 66 90 83 81</span></div>
@@ -572,12 +598,14 @@ const translations = {
   fr: {
     badge_pfe: '🟢 DISPONIBLE POUR STAGE PFE CYBERSÉCURITÉ (2026)',
     hero_title: 'Chaghough Mountassir',
-    hero_desc: "Étudiant en 5e année du cycle ingénieur en cybersécurité à l'École Marocaine des Sciences de l'Ingénieur (EMSI Marrakech). Je conçois des environnements SIEM / SOC unifiés (Wazuh, FortiGate, Grafana, TheHive) et développe des applications web full-stack robustes et sécurisées comme Beflextravel.",
+    hero_desc: "Étudiant en 5e année du cycle ingénieur en cybersécurité à l'École Marocaine des Sciences de l'Ingénieur (EMSI Marrakech). Je conçois des environnements SIEM / SOC unifiés (Wazuh, FortiGate, Grafana), des architectures de Supervision Zabbix & GNS3, des solutions Blockchain & Web3 (Projet OCP TSP) et développe des applications web robustes comme Beflextravel.",
     btn_projects: 'Explorer les Projets',
     btn_contact: 'Me Contacter',
     btn_cv: 'Voir le CV',
     nav_about: 'À Propos',
     nav_siem: 'Stage SIEM',
+    nav_ocp: 'Blockchain OCP',
+    nav_zabbix: 'Zabbix & GNS3',
     nav_beflex: 'Beflextravel',
     nav_experience: 'Expériences',
     nav_skills: 'Compétences',
@@ -587,12 +615,14 @@ const translations = {
   en: {
     badge_pfe: '🟢 AVAILABLE FOR CYBERSECURITY END-OF-STUDIES INTERNSHIP (2026)',
     hero_title: 'Chaghough Mountassir',
-    hero_desc: 'Final year Cybersecurity Engineering student at the Moroccan School of Engineering Sciences (EMSI Marrakech). I design unified SIEM / SOC environments (Wazuh, FortiGate, Grafana, TheHive) and engineer secure, high-performance web applications like Beflextravel.',
+    hero_desc: 'Final year Cybersecurity Engineering student at the Moroccan School of Engineering Sciences (EMSI Marrakech). I design unified SIEM / SOC environments (Wazuh, FortiGate, Grafana), Zabbix & GNS3 network telemetry, Web3 & Blockchain systems (OCP TSP project) and engineer robust web platforms like Beflextravel.',
     btn_projects: 'Explore Projects',
     btn_contact: 'Get In Touch',
     btn_cv: 'View Resume',
     nav_about: 'About',
     nav_siem: 'SIEM Internship',
+    nav_ocp: 'Blockchain OCP',
+    nav_zabbix: 'Zabbix & GNS3',
     nav_beflex: 'Beflextravel',
     nav_experience: 'Experience',
     nav_skills: 'Skills',
@@ -619,4 +649,75 @@ function initLanguageToggle() {
 
     showToast(`Langue changée : ${currentLang.toUpperCase()}`, 'info');
   });
+}
+
+/* ==========================================================================
+   10. INTERACTIVE PROJECT SIMULATIONS (OCP Blockchain & Zabbix Telemetry)
+   ========================================================================== */
+function initProjectSimulations() {
+  // Blockchain OCP Simulation
+  const verifyBtn = document.getElementById('btn-verify-blockchain');
+  const hashDisplay = document.getElementById('blockchain-hash-display');
+
+  if (verifyBtn) {
+    verifyBtn.addEventListener('click', () => {
+      verifyBtn.disabled = true;
+      verifyBtn.innerHTML = '<span>⏳ Calcul Preuve HMAC-SHA256 & Interrogation IPFS...</span>';
+
+      setTimeout(() => {
+        const randomHex = Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join('');
+        if (hashDisplay) {
+          hashDisplay.textContent = randomHex;
+          hashDisplay.style.color = '#34d399';
+        }
+        showToast('✅ Preuve cryptographique vérifiée sur la Blockchain OCP ! Lot TSP conforme (P₂O₅: 46.85%).', 'success');
+        verifyBtn.disabled = false;
+        verifyBtn.innerHTML = '<span>✓ Preuve Validée & Bloc Scellé (Refaire)</span>';
+      }, 1000);
+    });
+  }
+
+  // Zabbix GNS3 CPU Load Correlation Simulation
+  const zabbixBtn = document.getElementById('btn-trigger-zabbix');
+  const cpuVal = document.getElementById('zabbix-cpu-val');
+  const cpuTrigger = document.getElementById('zabbix-cpu-trigger');
+
+  if (zabbixBtn && cpuVal) {
+    zabbixBtn.addEventListener('click', () => {
+      zabbixBtn.disabled = true;
+      zabbixBtn.innerHTML = '<span>⚡ Injection de Charge Trafic Réseau...</span>';
+
+      // Step 1: Spike CPU to High Trigger
+      cpuVal.textContent = '89.4%';
+      cpuVal.style.color = '#ef4444';
+      if (cpuTrigger) {
+        cpuTrigger.className = 'trigger-item high';
+        cpuTrigger.innerHTML = '<span>🔥 [Core-Router-01] CRITICAL: CPU Overload > 85% (Correlated with eth0 spike)</span><span class="trigger-badge">HIGH</span>';
+      }
+      showToast('🚨 Trigger Zabbix Déclenché : Saturation CPU détectée sur Core-Router-01 (89.4%) !', 'error');
+
+      // Step 2: Correlate and cool down
+      setTimeout(() => {
+        cpuVal.textContent = '54.2%';
+        cpuVal.style.color = '#f59e0b';
+        if (cpuTrigger) {
+          cpuTrigger.className = 'trigger-item warning';
+          cpuTrigger.innerHTML = '<span>⚠️ [Core-Router-01] CPU Stabilizing (54.2%)</span><span class="trigger-badge">WARNING</span>';
+        }
+      }, 2500);
+
+      // Step 3: Resolved
+      setTimeout(() => {
+        cpuVal.textContent = '31.8%';
+        cpuVal.style.color = '#00f2fe';
+        if (cpuTrigger) {
+          cpuTrigger.className = 'trigger-item ok';
+          cpuTrigger.innerHTML = '<span>✓ [Core-Router-01] CPU Load Normalized (31.8%)</span><span class="trigger-badge">RESOLVED</span>';
+        }
+        showToast('✅ Corrélation résolue : Trafic stabilisé et CPU normalisé.', 'success');
+        zabbixBtn.disabled = false;
+        zabbixBtn.innerHTML = '<span>⚡ Simuler Corrélation Charge CPU</span>';
+      }, 4500);
+    });
+  }
 }

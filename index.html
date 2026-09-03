@@ -44,6 +44,8 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-link" data-i18n="nav_about">À Propos</a></li>
         <li><a href="#siem-project" class="nav-link" data-i18n="nav_siem">Stage SIEM</a></li>
+        <li><a href="#ocp-project" class="nav-link" data-i18n="nav_ocp">Blockchain OCP</a></li>
+        <li><a href="#zabbix-project" class="nav-link" data-i18n="nav_zabbix">Zabbix & GNS3</a></li>
         <li><a href="#beflex-project" class="nav-link" data-i18n="nav_beflex">Beflextravel</a></li>
         <li><a href="#experience" class="nav-link" data-i18n="nav_experience">Expériences</a></li>
         <li><a href="#skills" class="nav-link" data-i18n="nav_skills">Compétences</a></li>
@@ -83,18 +85,24 @@
         </div>
 
         <p class="hero-description">
-          Étudiant en 5e année du cycle ingénieur en cybersécurité à l'<strong>École Marocaine des Sciences de l'Ingénieur (EMSI Marrakech)</strong>. Je conçois des environnements <strong>SIEM / SOC</strong> unifiés (Wazuh, FortiGate, Grafana, TheHive) et développe des applications web full-stack robustes et sécurisées comme <strong>Beflextravel</strong>.
+          Étudiant en 5e année du cycle ingénieur en cybersécurité à l'<strong>École Marocaine des Sciences de l'Ingénieur (EMSI Marrakech)</strong>. Je conçois des environnements <strong>SIEM / SOC</strong> unifiés (Wazuh, FortiGate, Grafana), des architectures de <strong>Supervision Zabbix & GNS3</strong>, des solutions <strong>Blockchain & Web3 (Projet OCP TSP)</strong> et développe des applications web robustes comme <strong>Beflextravel</strong>.
         </p>
 
         <div class="hero-cta-group">
           <a href="#siem-project" class="btn btn-primary">
             <span>🛡️ Projet SIEM & SOC</span>
           </a>
+          <a href="#ocp-project" class="btn btn-secondary" style="border-color: rgba(139, 92, 246, 0.5); color: #a78bfa;">
+            <span>⛓️ Blockchain OCP (TSP)</span>
+          </a>
+          <a href="#zabbix-project" class="btn btn-secondary" style="border-color: rgba(0, 242, 254, 0.5); color: #00f2fe;">
+            <span>📊 Zabbix & GNS3</span>
+          </a>
           <a href="#beflex-project" class="btn btn-emerald">
-            <span>💼 Mission Freelance Beflextravel</span>
+            <span>💼 Beflextravel</span>
           </a>
           <a href="#cv-modal" class="btn btn-secondary" id="open-cv-btn">
-            <span>📄 Consulter CV</span>
+            <span>📄 CV</span>
           </a>
         </div>
 
@@ -483,6 +491,273 @@
   </section>
 
   <!-- ==========================================================================
+       Featured Project 3: Blockchain & Supply Chain Traceability — OCP (Produit TSP)
+       ========================================================================== -->
+  <section class="featured-project" id="ocp-project">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.35); color: #a78bfa;">⛓️ Blockchain & Industrie 4.0</span>
+        <h2 class="section-title">Traçabilité Supply Chain <span class="gradient-text" style="background: linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Blockchain OCP (TSP)</span></h2>
+        <p class="section-subtitle">Plateforme décentralisée Web3 de traçabilité et de certification pour le <strong>Groupe OCP</strong> sur la production et l'exportation de l'engrais <strong>Triple Super Phosphate (TSP)</strong>.</p>
+      </div>
+
+      <div class="blockchain-card">
+        <div class="blockchain-grid">
+          <div>
+            <div class="ocp-badge">🏢 Projet Industriel — Groupe OCP (Office Chérifien des Phosphates)</div>
+            <div class="beflex-tag-row">
+              <span class="beflex-tag web3-tag">Web3 & MetaMask</span>
+              <span class="beflex-tag web3-tag">IPFS / CID Storage</span>
+              <span class="beflex-tag web3-tag">HMAC-SHA256</span>
+              <span class="beflex-tag">React (Frontend)</span>
+              <span class="beflex-tag">Node.js / Express</span>
+              <span class="beflex-tag">API REST & MySQL</span>
+              <span class="beflex-tag" style="color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Qualité P₂O₅</span>
+              <span class="beflex-tag">Modélisation UML</span>
+            </div>
+
+            <h3 class="beflex-title" style="font-size: 1.85rem;">Système Décentralisé de Traçabilité des Lots d'Engrais TSP</h3>
+
+            <p class="beflex-description">
+              Conception et développement d'un écosystème de traçabilité infalsifiable pour le leader mondial <strong>OCP (Office Chérifien des Phosphates)</strong>. La plateforme suit chaque lot d'engrais <strong>TSP (Triple Super Phosphate)</strong> depuis l'extraction et la synthèse chimique jusqu'à l'embarquement portuaire, en certifiant les indicateurs qualité clés tels que le taux de <strong>Pentoxyde de phosphore (P₂O₅)</strong>.
+            </p>
+
+            <ul class="beflex-features-list">
+              <li><span class="check-icon">✓</span> <strong>Authentification Web3 :</strong> Signature cryptographique des transactions via <strong>MetaMask</strong> pour chaque acteur (Usine, Labo Qualité, Douane).</li>
+              <li><span class="check-icon">✓</span> <strong>Preuves HMAC-SHA256 :</strong> Génération d'empreintes numériques scellant l'intégrité de chaque événement critique de la chaîne logistique.</li>
+              <li><span class="check-icon">✓</span> <strong>Stockage Décentralisé IPFS :</strong> Archivage immuable des rapports d'analyses chimiques identifiés par leur <strong>CID (Content Identifier)</strong>.</li>
+              <li><span class="check-icon">✓</span> <strong>Contrôle Qualité P₂O₅ :</strong> Suivi et validation automatisée des seuils normatifs de $P_2O_5$ ($\ge 46\%$) garantissant la pureté du fertilisant.</li>
+              <li><span class="check-icon">✓</span> <strong>Passeport Digital & QR Code :</strong> Émission automatique de passeports PDF dotés de QR Codes pour vérification instantanée par les clients internationaux.</li>
+              <li><span class="check-icon">✓</span> <strong>Architecture Hybride :</strong> Frontend <strong>React</strong> communicant via <strong>API REST</strong> avec backend <strong>Node.js</strong> et base relationnelle <strong>MySQL</strong>.</li>
+            </ul>
+
+            <div class="beflex-cta-group">
+              <button type="button" class="btn btn-primary" id="btn-verify-blockchain" style="background: linear-gradient(135deg, #7c3aed, #2563eb); border: none;">
+                <span>⛓️ Simuler Vérification On-Chain</span>
+              </button>
+              <a href="#contact" class="btn btn-secondary">
+                <span>💬 Échanger sur ce projet</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Web3 / MetaMask Interactive Mockup Preview -->
+          <div class="web3-preview-wrapper">
+            <div class="web3-preview-header">
+              <div class="terminal-dots">
+                <span class="t-dot t-dot-red"></span>
+                <span class="t-dot t-dot-yellow"></span>
+                <span class="t-dot t-dot-green"></span>
+              </div>
+              <div class="wallet-badge">
+                <span class="pulse-dot" style="background: #fbbf24; box-shadow: 0 0 8px #fbbf24;"></span>
+                <span>MetaMask: 0x71C...4e9F</span>
+              </div>
+              <span style="font-size: 0.7rem; color: #a78bfa; font-family: var(--font-mono);">OCP Web3 dApp</span>
+            </div>
+
+            <div class="web3-app-body">
+              <div class="blockchain-lot-card">
+                <div class="lot-header">
+                  <div>
+                    <span style="font-size: 0.7rem; color: #94a3b8;">PRODUIT TRAÇABLE :</span>
+                    <div class="lot-id">📦 TSP-LOT #OCP-2026-MAR-891</div>
+                  </div>
+                  <span class="lot-status-badge">● Certifié Conforme</span>
+                </div>
+
+                <div class="crypto-data-grid">
+                  <div class="crypto-data-item">
+                    <span>Organisme Émetteur</span>
+                    <strong>OCP Group (Maroc)</strong>
+                  </div>
+                  <div class="crypto-data-item">
+                    <span>Engrais Phosphaté</span>
+                    <strong>Triple Super Phosphate</strong>
+                  </div>
+                  <div class="crypto-data-item">
+                    <span>Teneur en P₂O₅</span>
+                    <strong style="color: #34d399;">46.85% (Qualité A+)</strong>
+                  </div>
+                  <div class="crypto-data-item">
+                    <span>Poids Expédié</span>
+                    <strong>25 000 Tonnes</strong>
+                  </div>
+                </div>
+
+                <div class="crypto-hash-row">
+                  <div class="hash-label">
+                    <span>🔐 Preuve Numérique (HMAC-SHA256)</span>
+                    <span style="color: #34d399; font-size: 0.68rem;">✓ Validé</span>
+                  </div>
+                  <div class="hash-value" id="blockchain-hash-display">9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08</div>
+                </div>
+
+                <div class="crypto-hash-row" style="border-color: rgba(0, 242, 254, 0.25);">
+                  <div class="hash-label" style="color: #38bdf8;">
+                    <span>🌐 Stockage Décentralisé IPFS (CID)</span>
+                    <span style="color: #00f2fe; font-size: 0.68rem;">Stockage P2P</span>
+                  </div>
+                  <div class="hash-value">QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco</div>
+                </div>
+
+                <div class="passport-qr-bar">
+                  <div class="qr-box" title="QR Code Passeport Digital">
+                    <span>📱</span>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.8rem; font-weight: 700; color: #fff;">Passeport Digital & QR Code Export</div>
+                    <div style="font-size: 0.7rem; color: #94a3b8;">Authenticité vérifiable instantanément par douanes et acheteurs.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Featured Project 4: Network Monitoring & Metric Correlation — GNS3 & Zabbix
+       ========================================================================== -->
+  <section class="featured-project" id="zabbix-project">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.35); color: #f87171;">📊 Monitoring & Télémétrie Proactive</span>
+        <h2 class="section-title">Supervision Réseau & <span class="gradient-text">Corrélation CPU / Zabbix</span></h2>
+        <p class="section-subtitle">Surveillance proactive de haute précision d'une infrastructure virtualisée sous <strong>GNS3</strong> via <strong>Zabbix Server</strong>, avec configuration granulaire des <strong>Items</strong>, <strong>Triggers</strong> et corrélation de charge processeur.</p>
+      </div>
+
+      <div class="zabbix-card">
+        <div class="zabbix-grid">
+          <div>
+            <div class="ocp-badge" style="background: rgba(239, 68, 68, 0.12); color: #f87171; border-color: rgba(239, 68, 68, 0.35);">⚙️ Projet Réseaux & Supervision Infrastructure</div>
+            <div class="beflex-tag-row">
+              <span class="beflex-tag zabbix-tag">Zabbix Server & Agent</span>
+              <span class="beflex-tag zabbix-tag">Triggers & Alerting</span>
+              <span class="beflex-tag zabbix-tag">Items & Metrics</span>
+              <span class="beflex-tag">GNS3 Virtualisation</span>
+              <span class="beflex-tag">Corrélation CPU / RAM</span>
+              <span class="beflex-tag">SNMP v2c / v3</span>
+              <span class="beflex-tag">Topologie Multi-Routeurs</span>
+              <span class="beflex-tag">Linux & Syslog</span>
+            </div>
+
+            <h3 class="beflex-title" style="font-size: 1.85rem;">Collecte Granulaire, Triggers & Corrélation de Métriques Réseau</h3>
+
+            <p class="beflex-description">
+              Déploiement d'une architecture de supervision intégrale sous <strong>Zabbix</strong> dédiée à la surveillance en direct d'équipements réseaux et de serveurs virtualisés sous <strong>GNS3</strong>. Le projet met l'accent sur la définition d'<strong>Items</strong> personnalisés et la corrélation mathématique de charge (pics d'utilisation CPU corrélés avec les flux d'E/S réseau et la saturation mémoire).
+            </p>
+
+            <ul class="beflex-features-list">
+              <li><span class="check-icon">✓</span> <strong>Configuration des Items :</strong> Définition des sondes pour la collecte continue (taux d'occupation CPU, buffers RAM, débit interfaces bps, temps de réponse ICMP ping).</li>
+              <li><span class="check-icon">✓</span> <strong>Triggers & Seuils d'Alertes :</strong> Écriture d'expressions logiques multi-critères (Alerte <code>CPU &gt; 80% pendant 5 min</code>, détection de déconnexion d'interfaces).</li>
+              <li><span class="check-icon">✓</span> <strong>Corrélation CPU & Trafic :</strong> Détection automatisée des anomalies où une hausse subite de bande passante réseau entraîne une saturation CPU anormale.</li>
+              <li><span class="check-icon">✓</span> <strong>Environnement Virtualisé GNS3 :</strong> Modélisation de topologies complexes interconnectant routeurs Cisco/VyOS, machines virtuelles Linux et passerelles.</li>
+              <li><span class="check-icon">✓</span> <strong>Gestion des Sévérités :</strong> Catégorisation des incidents (Disaster, High, Warning, Information) et notification proactive.</li>
+            </ul>
+
+            <div class="beflex-cta-group">
+              <button type="button" class="btn btn-primary" id="btn-trigger-zabbix" style="background: linear-gradient(135deg, #ef4444, #f59e0b); border: none;">
+                <span>⚡ Simuler Corrélation Charge CPU</span>
+              </button>
+              <a href="#contact" class="btn btn-secondary">
+                <span>💬 Discuter Supervision</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Zabbix Monitoring Dashboard Mockup Preview -->
+          <div class="zabbix-preview-wrapper">
+            <div class="zabbix-preview-topbar">
+              <div class="zabbix-brand">
+                <span class="zabbix-brand-icon">Z</span>
+                <span>ZABBIX 7.0 LTS — GNS3 Lab</span>
+              </div>
+              <div style="font-size: 0.72rem; color: #10b981; font-family: var(--font-mono);">
+                <span>● Server Active</span>
+              </div>
+            </div>
+
+            <div class="zabbix-body">
+              <!-- Live Metrics Grid -->
+              <div class="zabbix-metrics-grid">
+                <div class="zabbix-metric-box">
+                  <div class="zabbix-metric-val" id="zabbix-cpu-val" style="color: #00f2fe;">32.4%</div>
+                  <div class="zabbix-metric-label">CPU Utilization</div>
+                </div>
+                <div class="zabbix-metric-box">
+                  <div class="zabbix-metric-val" style="color: #34d399;">1.82 GB</div>
+                  <div class="zabbix-metric-label">Memory In-Use</div>
+                </div>
+                <div class="zabbix-metric-box">
+                  <div class="zabbix-metric-val" style="color: #fbbf24;">480 Mbps</div>
+                  <div class="zabbix-metric-label">Interface eth0 I/O</div>
+                </div>
+              </div>
+
+              <!-- Active Triggers Box -->
+              <div class="zabbix-triggers-box">
+                <div class="triggers-title">
+                  <span>🚨 STATUT DES TRIGGERS (Corrélation Live)</span>
+                  <span style="font-size: 0.68rem; color: #94a3b8;">Auto-Refresh: 5s</span>
+                </div>
+
+                <div class="trigger-item warning" id="zabbix-cpu-trigger">
+                  <span>⚠️ [Core-Router-01] CPU Load &gt; 75% Threshold Spike</span>
+                  <span class="trigger-badge">WARNING</span>
+                </div>
+                <div class="trigger-item high">
+                  <span>🔥 [Edge-Switch] High Inbound Traffic Bandwidth (ETH-2)</span>
+                  <span class="trigger-badge">HIGH</span>
+                </div>
+                <div class="trigger-item ok">
+                  <span>✓ [Zabbix-Agent-Linux] ICMP Ping Response: 0.42ms</span>
+                  <span class="trigger-badge">RESOLVED</span>
+                </div>
+              </div>
+
+              <!-- Telemetry Items Sample Table -->
+              <table class="zabbix-items-table">
+                <thead>
+                  <tr>
+                    <th>Item Surveillé</th>
+                    <th>Dernière Valeur</th>
+                    <th>Intervalle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>system.cpu.util[,user]</td>
+                    <td style="color:#00f2fe;">32.4 %</td>
+                    <td>10s</td>
+                  </tr>
+                  <tr>
+                    <td>vm.memory.size[available]</td>
+                    <td style="color:#34d399;">6.18 GB</td>
+                    <td>30s</td>
+                  </tr>
+                  <tr>
+                    <td>net.if.in[eth0,bytes]</td>
+                    <td style="color:#fbbf24;">58.4 MB/s</td>
+                    <td>5s</td>
+                  </tr>
+                  <tr>
+                    <td>icmppingsec[192.168.10.1]</td>
+                    <td style="color:#a78bfa;">0.00042 s</td>
+                    <td>5s</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
        Experience Timeline
        ========================================================================== -->
   <section class="experience-section" id="experience">
@@ -661,15 +936,32 @@
             <div class="skill-icon-wrap">📊</div>
             <div>
               <div class="skill-card-title">Monitoring & Alerting</div>
-              <div class="skill-card-category">Supervision</div>
+              <div class="skill-card-category">Supervision Proactive</div>
             </div>
           </div>
-          <p style="font-size:0.85rem; color:#94a3b8;">Tableaux de bord opérationnels et collecte de télémétrie en direct.</p>
+          <p style="font-size:0.85rem; color:#94a3b8;">Sondes télémétriques, corrélation CPU/RAM et seuils d'alertes.</p>
           <div class="skill-items-list">
-            <span class="skill-badge">Grafana</span>
-            <span class="skill-badge">Zabbix Server</span>
-            <span class="skill-badge">SNMP / Syslog</span>
-            <span class="skill-badge">Pipelines Alerting</span>
+            <span class="skill-badge">Zabbix Server & Agents</span>
+            <span class="skill-badge">Items & Triggers</span>
+            <span class="skill-badge">Corrélation CPU / Flux</span>
+            <span class="skill-badge">Grafana & SNMP</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-category="security">
+          <div class="skill-card-header">
+            <div class="skill-icon-wrap">⛓️</div>
+            <div>
+              <div class="skill-card-title">Blockchain & Web3</div>
+              <div class="skill-card-category">Traçabilité & Décentralisation</div>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; color:#94a3b8;">Applications décentralisées, preuves d'intégrité et supply chain sécurisée.</p>
+          <div class="skill-items-list">
+            <span class="skill-badge">Web3 & MetaMask</span>
+            <span class="skill-badge">HMAC-SHA256</span>
+            <span class="skill-badge">IPFS / CID Storage</span>
+            <span class="skill-badge">Passeport Digital QR</span>
           </div>
         </div>
 
@@ -678,7 +970,7 @@
           <div class="skill-card-header">
             <div class="skill-icon-wrap">💻</div>
             <div>
-              <div class="skill-card-title">Langages de Programmation</div>
+              <div class="skill-card-title">Langages & Modélisation</div>
               <div class="skill-card-category">Développement</div>
             </div>
           </div>
@@ -688,7 +980,7 @@
             <span class="skill-badge">Java</span>
             <span class="skill-badge">C++</span>
             <span class="skill-badge">JavaScript (ES6+)</span>
-            <span class="skill-badge">PHP</span>
+            <span class="skill-badge">Modélisation UML</span>
           </div>
         </div>
 
@@ -705,8 +997,8 @@
             <span class="skill-badge">Next.js 16</span>
             <span class="skill-badge">React 19</span>
             <span class="skill-badge">Tailwind CSS</span>
-            <span class="skill-badge">Node.js</span>
-            <span class="skill-badge">HTML5 / CSS3</span>
+            <span class="skill-badge">Node.js & Express</span>
+            <span class="skill-badge">API REST & HTTP</span>
           </div>
         </div>
 
@@ -722,9 +1014,9 @@
           <p style="font-size:0.85rem; color:#94a3b8;">Administration d'environnements virtualisés et systèmes distribués.</p>
           <div class="skill-items-list">
             <span class="skill-badge">Linux / Unix</span>
+            <span class="skill-badge">GNS3 Lab</span>
             <span class="skill-badge">Réseaux TCP/IP</span>
             <span class="skill-badge">Virtualisation</span>
-            <span class="skill-badge">Systèmes Distribués</span>
           </div>
         </div>
 
@@ -736,12 +1028,12 @@
               <div class="skill-card-category">Data & Storage</div>
             </div>
           </div>
-          <p style="font-size:0.85rem; color:#94a3b8;">Gestion des données relationnelles, NoSQL et backend serverless.</p>
+          <p style="font-size:0.85rem; color:#94a3b8;">Gestion des données relationnelles, NoSQL et stockage décentralisé.</p>
           <div class="skill-items-list">
+            <span class="skill-badge">MySQL</span>
             <span class="skill-badge">PostgreSQL</span>
             <span class="skill-badge">Supabase</span>
-            <span class="skill-badge">MySQL</span>
-            <span class="skill-badge">NoSQL</span>
+            <span class="skill-badge">IPFS Decentralized</span>
           </div>
         </div>
 
@@ -934,9 +1226,11 @@
         <div class="footer-logo">
           <span>Chaghough Mountassir</span> — <span class="gradient-text">Ingénieur Cybersécurité</span>
         </div>
-        <div style="display: flex; gap: 1.5rem;">
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
           <a href="#about" class="nav-link">À Propos</a>
-          <a href="#siem-project" class="nav-link">Projet SIEM</a>
+          <a href="#siem-project" class="nav-link">SIEM & SOC</a>
+          <a href="#ocp-project" class="nav-link">Blockchain OCP</a>
+          <a href="#zabbix-project" class="nav-link">Zabbix & GNS3</a>
           <a href="#beflex-project" class="nav-link">Beflextravel</a>
           <a href="#contact" class="nav-link">Contact</a>
         </div>
