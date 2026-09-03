@@ -180,18 +180,176 @@ function initTerminalCLI() {
 <div class="t-line">💼 LinkedIn : <a href="https://linkedin.com/in/mountassir-chaghough" target="_blank" style="color:#00f2fe;">linkedin.com/in/mountassir-chaghough</a></div>
 <div class="t-line">📍 Adresse : Marrakech, Mhamid, Lot Elbaraka N105</div>`,
 
+    ping: (target) => {
+      const targets = {
+        siem: {
+          ip: '192.168.10.10',
+          host: 'secops-wazuh.union-it.lab',
+          name: 'Stage SIEM & SOC (Union IT Services)',
+          sectionId: 'siem-project',
+          cardSelector: '.siem-hero-card'
+        },
+        soc: {
+          ip: '192.168.10.10',
+          host: 'secops-wazuh.union-it.lab',
+          name: 'Stage SIEM & SOC (Union IT Services)',
+          sectionId: 'siem-project',
+          cardSelector: '.siem-hero-card'
+        },
+        ocp: {
+          ip: '10.24.8.100',
+          host: 'web3-gateway.ocp-tsp.chain',
+          name: 'Blockchain OCP (Traçabilité TSP)',
+          sectionId: 'ocp-project',
+          cardSelector: '.blockchain-card'
+        },
+        tsp: {
+          ip: '10.24.8.100',
+          host: 'web3-gateway.ocp-tsp.chain',
+          name: 'Blockchain OCP (Traçabilité TSP)',
+          sectionId: 'ocp-project',
+          cardSelector: '.blockchain-card'
+        },
+        blockchain: {
+          ip: '10.24.8.100',
+          host: 'web3-gateway.ocp-tsp.chain',
+          name: 'Blockchain OCP (Traçabilité TSP)',
+          sectionId: 'ocp-project',
+          cardSelector: '.blockchain-card'
+        },
+        zabbix: {
+          ip: '172.16.1.100',
+          host: 'zabbix-srv01.gns3-telemetry.local',
+          name: 'Supervision Zabbix & GNS3',
+          sectionId: 'zabbix-project',
+          cardSelector: '.zabbix-card'
+        },
+        gns3: {
+          ip: '172.16.1.100',
+          host: 'zabbix-srv01.gns3-telemetry.local',
+          name: 'Supervision Zabbix & GNS3',
+          sectionId: 'zabbix-project',
+          cardSelector: '.zabbix-card'
+        },
+        beflex: {
+          ip: '104.21.48.12',
+          host: 'beflextravel.com',
+          name: 'Plateforme Beflextravel',
+          sectionId: 'beflex-project',
+          cardSelector: '.beflex-card'
+        },
+        beflextravel: {
+          ip: '104.21.48.12',
+          host: 'beflextravel.com',
+          name: 'Plateforme Beflextravel',
+          sectionId: 'beflex-project',
+          cardSelector: '.beflex-card'
+        }
+      };
+
+      if (!target) {
+        return `
+<div class="t-line t-highlight">📡 Utilisation de la commande PING :</div>
+<div class="t-line">▸ <span class="t-success">ping siem</span>    : Tester le nœud SecOps SIEM & ouvrir la session</div>
+<div class="t-line">▸ <span class="t-success">ping ocp</span>     : Tester la passerelle Web3 OCP & ouvrir la session</div>
+<div class="t-line">▸ <span class="t-success">ping zabbix</span>  : Tester le serveur de télémétrie Zabbix & ouvrir la session</div>
+<div class="t-line">▸ <span class="t-success">ping beflex</span>  : Tester la plateforme Beflextravel & ouvrir la session</div>`;
+      }
+
+      const info = targets[target.toLowerCase()];
+      if (!info) {
+        return `<div class="t-line" style="color:#ef4444;">❌ Hôte inconnu: "${escapeHtml(target)}". Cibles disponibles: siem, ocp, zabbix, beflex.</div>`;
+      }
+
+      // Execute live ICMP ping simulation
+      runLivePing(info);
+      return '';
+    },
+
     clear: () => {
       termBody.innerHTML = '';
       return '';
     }
   };
 
+  function runLivePing(info) {
+    const initLine = document.createElement('div');
+    initLine.className = 't-line';
+    initLine.innerHTML = `<span class="t-highlight">PING ${info.host} (${info.ip}) 56(84) bytes of data.</span>`;
+    termBody.appendChild(initLine);
+    termBody.scrollTop = termBody.scrollHeight;
+
+    let seq = 1;
+    const interval = setInterval(() => {
+      if (seq <= 4) {
+        const pingTime = (0.28 + Math.random() * 0.22).toFixed(2);
+        const seqLine = document.createElement('div');
+        seqLine.className = 't-line';
+        seqLine.innerHTML = `64 bytes from <span class="t-success">${info.ip}</span>: icmp_seq=${seq} ttl=64 time=<span class="t-highlight">${pingTime} ms</span>`;
+        termBody.appendChild(seqLine);
+        termBody.scrollTop = termBody.scrollHeight;
+        seq++;
+      } else {
+        clearInterval(interval);
+        
+        // Stats & Success
+        const statLine = document.createElement('div');
+        statLine.className = 't-line';
+        statLine.innerHTML = `--- ${info.host} ping statistics ---<br><span class="t-success">4 packets transmitted, 4 received, 0% packet loss</span>, time 3004ms`;
+        termBody.appendChild(statLine);
+
+        const openLine = document.createElement('div');
+        openLine.className = 't-line t-highlight';
+        openLine.style.fontWeight = 'bold';
+        openLine.innerHTML = `🔓 [PING SUCCEEDED] Hôte accessible — Connexion & Ouverture de la session <strong>${info.name}</strong>...`;
+        termBody.appendChild(openLine);
+        termBody.scrollTop = termBody.scrollHeight;
+
+        showToast(`📡 Ping réussi (0% loss) ! Ouverture de la session : ${info.name}`, 'success');
+
+        // Smooth scroll to section and pulse highlight
+        setTimeout(() => {
+          const targetSection = document.getElementById(info.sectionId);
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            const card = targetSection.querySelector(info.cardSelector);
+            if (card) {
+              card.classList.remove('session-highlight');
+              void card.offsetWidth; // Trigger reflow
+              card.classList.add('session-highlight');
+            }
+          }
+        }, 800);
+      }
+    }, 280);
+  }
+
+  // Quick Ping Chips Click Listener
+  document.querySelectorAll('.term-ping-chip').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const target = btn.getAttribute('data-ping');
+      if (target) {
+        // Echo command
+        const cmdEcho = document.createElement('div');
+        cmdEcho.className = 't-line';
+        cmdEcho.innerHTML = `<span class="t-prompt">mountassir@secops</span>:<span class="t-host">~</span>$ <span class="t-cmd">ping ${escapeHtml(target)}</span>`;
+        termBody.appendChild(cmdEcho);
+        
+        commands.ping(target);
+      }
+    });
+  });
+
   termInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       const rawCmd = termInput.value.trim();
-      const cmd = rawCmd.toLowerCase();
-      
       if (!rawCmd) return;
+
+      const parts = rawCmd.split(/\s+/);
+      const mainCmd = parts[0].toLowerCase();
+      const arg = parts[1] || '';
 
       // Echo command
       const cmdEcho = document.createElement('div');
@@ -200,8 +358,15 @@ function initTerminalCLI() {
       termBody.appendChild(cmdEcho);
 
       // Execute
-      if (commands[cmd]) {
-        const result = commands[cmd]();
+      if (mainCmd === 'ping') {
+        const result = commands.ping(arg);
+        if (result) {
+          const resDiv = document.createElement('div');
+          resDiv.innerHTML = result;
+          termBody.appendChild(resDiv);
+        }
+      } else if (commands[mainCmd]) {
+        const result = commands[mainCmd]();
         if (result) {
           const resDiv = document.createElement('div');
           resDiv.innerHTML = result;
@@ -211,7 +376,7 @@ function initTerminalCLI() {
         const errDiv = document.createElement('div');
         errDiv.className = 't-line';
         errDiv.style.color = '#ef4444';
-        errDiv.textContent = `Commande inconnue: "${rawCmd}". Tapez "help" pour la liste des commandes.`;
+        errDiv.textContent = `Commande inconnue: "${rawCmd}". Tapez "help" ou "ping <session>" pour explorer.`;
         termBody.appendChild(errDiv);
       }
 
