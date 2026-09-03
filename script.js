@@ -189,28 +189,7 @@ function initTerminalCLI() {
           sectionId: 'siem-project',
           cardSelector: '.siem-hero-card'
         },
-        soc: {
-          ip: '192.168.10.10',
-          host: 'secops-wazuh.union-it.lab',
-          name: 'Stage SIEM & SOC (Union IT Services)',
-          sectionId: 'siem-project',
-          cardSelector: '.siem-hero-card'
-        },
         ocp: {
-          ip: '10.24.8.100',
-          host: 'web3-gateway.ocp-tsp.chain',
-          name: 'Blockchain OCP (Traçabilité TSP)',
-          sectionId: 'ocp-project',
-          cardSelector: '.blockchain-card'
-        },
-        tsp: {
-          ip: '10.24.8.100',
-          host: 'web3-gateway.ocp-tsp.chain',
-          name: 'Blockchain OCP (Traçabilité TSP)',
-          sectionId: 'ocp-project',
-          cardSelector: '.blockchain-card'
-        },
-        blockchain: {
           ip: '10.24.8.100',
           host: 'web3-gateway.ocp-tsp.chain',
           name: 'Blockchain OCP (Traçabilité TSP)',
@@ -224,21 +203,7 @@ function initTerminalCLI() {
           sectionId: 'zabbix-project',
           cardSelector: '.zabbix-card'
         },
-        gns3: {
-          ip: '172.16.1.100',
-          host: 'zabbix-srv01.gns3-telemetry.local',
-          name: 'Supervision Zabbix & GNS3',
-          sectionId: 'zabbix-project',
-          cardSelector: '.zabbix-card'
-        },
         beflex: {
-          ip: '104.21.48.12',
-          host: 'beflextravel.com',
-          name: 'Plateforme Beflextravel',
-          sectionId: 'beflex-project',
-          cardSelector: '.beflex-card'
-        },
-        beflextravel: {
           ip: '104.21.48.12',
           host: 'beflextravel.com',
           name: 'Plateforme Beflextravel',
@@ -256,7 +221,39 @@ function initTerminalCLI() {
 <div class="t-line">▸ <span class="t-success">ping beflex</span>  : Tester la plateforme Beflextravel & ouvrir la session</div>`;
       }
 
-      const info = targets[target.toLowerCase()];
+      const raw = target.toLowerCase().trim();
+
+      const aliases = {
+        // SIEM & SOC variations & typos
+        siem: 'siem', seim: 'siem', seme: 'siem', sieme: 'siem', seem: 'siem', soc: 'siem',
+        wazuh: 'siem', wazu: 'siem', fortigate: 'siem', forti: 'siem', thehive: 'siem', union: 'siem', unionit: 'siem', stage: 'siem',
+        
+        // OCP & Blockchain variations & typos
+        ocp: 'ocp', tsp: 'ocp', blockchain: 'ocp', blockchaine: 'ocp', block: 'ocp', web3: 'ocp',
+        metamask: 'ocp', meta: 'ocp', ipfs: 'ocp', cid: 'ocp', p2o5: 'ocp', phosphate: 'ocp',
+        
+        // Zabbix & GNS3 variations & typos
+        zabbix: 'zabbix', zabix: 'zabbix', zabiw: 'zabbix', zabbx: 'zabbix', zbx: 'zabbix',
+        gns3: 'zabbix', gns: 'zabbix', telemetry: 'zabbix', monitoring: 'zabbix', cpu: 'zabbix', triggers: 'zabbix', items: 'zabbix',
+        
+        // Beflextravel variations & typos
+        beflex: 'beflex', beflextravel: 'beflex', 'beflex-travel': 'beflex', flex: 'beflex',
+        travel: 'beflex', marrakech: 'beflex', tour: 'beflex', tours: 'beflex', freelance: 'beflex'
+      };
+
+      let resolvedKey = aliases[raw];
+
+      if (!resolvedKey) {
+        const canonical = ['siem', 'ocp', 'zabbix', 'beflex'];
+        for (const c of canonical) {
+          if (raw.includes(c) || c.includes(raw) || getDistance(raw, c) <= 2) {
+            resolvedKey = c;
+            break;
+          }
+        }
+      }
+
+      const info = targets[resolvedKey];
       if (!info) {
         return `<div class="t-line" style="color:#ef4444;">❌ Hôte inconnu: "${escapeHtml(target)}". Cibles disponibles: siem, ocp, zabbix, beflex.</div>`;
       }
@@ -393,6 +390,28 @@ function initTerminalCLI() {
 
 function escapeHtml(str) {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function getDistance(a, b) {
+  if (a.length === 0) return b.length;
+  if (b.length === 0) return a.length;
+  const matrix = [];
+  for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+  for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+  for (let i = 1; i <= b.length; i++) {
+    for (let j = 1; j <= a.length; j++) {
+      if (b.charAt(i - 1) === a.charAt(j - 1)) {
+        matrix[i][j] = matrix[i - 1][j - 1];
+      } else {
+        matrix[i][j] = Math.min(
+          matrix[i - 1][j - 1] + 1,
+          matrix[i][j - 1] + 1,
+          matrix[i - 1][j] + 1
+        );
+      }
+    }
+  }
+  return matrix[b.length][a.length];
 }
 
 /* ==========================================================================
