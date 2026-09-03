@@ -171,6 +171,18 @@ function initTerminalCLI() {
 <div class="t-line">▸ Fonctionnalités : Matrice impact/urgence, inventaire automatique FusionInventory, MTTR</div>
 <div class="t-line">▸ Livrables : Tableaux de bord de suivi, base de connaissances et post-mortem</div>`,
 
+    vpn: () => `
+<div class="t-line t-highlight">🔐 LAB VPN SOFTETHER & PKI OPENSSL (X.509) :</div>
+<div class="t-line">▸ Auteurs : Abdessamad Adansar & Mountassir Chaghough</div>
+<div class="t-line">▸ Architecture : GNS3, Routeur Cisco IOS (NAT Inside/Outside), 4 VMs Ubuntu 22.04</div>
+<div class="t-line">▸ Serveur VPN : SoftEther v4.41, Hub 'VPN', SecureNAT (pool 192.168.3.0/24), UFW 443/TCP</div>
+<div class="t-line">▸ PKI OpenSSL : CA racine RSA 4096 (10 ans), server.crt, client2.p12 (PKCS#12)</div>
+<div class="t-line">▸ Authentification : Comparatif Mot de Passe vs Certificat X.509 (mTLS)</div>
+<div class="t-line">▸ Analyse Forensique : Capture Wireshark — HTTP en clair vs TLSv1.3 (AES-256-GCM)</div>`,
+
+    softether: () => commands.vpn(),
+    pki: () => commands.vpn(),
+
     beflextravel: () => `
 <div class="t-line t-highlight">💼 BEFLEXTRAVEL — MISSION FREELANCE & APPLICATION WEB :</div>
 <div class="t-line">▸ Statut : Développeur Full-Stack Freelance</div>
@@ -182,11 +194,11 @@ function initTerminalCLI() {
 
     skills: () => `
 <div class="t-line t-highlight">💻 ARSENAL TECHNIQUE :</div>
-<div class="t-line">▸ <span class="t-success">Sécurité/SIEM :</span> Wazuh, FortiGate, TheHive, Zabbix, GLPI, UEBA, GNS3, Wireshark</div>
+<div class="t-line">▸ <span class="t-success">Sécurité/SIEM :</span> Wazuh, FortiGate, SoftEther VPN, PKI OpenSSL, TheHive, Zabbix, GLPI, UEBA, Wireshark</div>
 <div class="t-line">▸ <span class="t-success">Web3 & Blockchain :</span> MetaMask, IPFS (CID), HMAC-SHA256, Smart Contracts, Web3.js</div>
 <div class="t-line">▸ <span class="t-success">Langages & Dev :</span> Python, Java, C++, JavaScript (ES6+), React, Next.js, Node.js, UML</div>
 <div class="t-line">▸ <span class="t-success">Bases de Données :</span> MySQL, PostgreSQL, Supabase, Storage IPFS</div>
-<div class="t-line">▸ <span class="t-success">Systèmes :</span> Linux/Unix, TCP/IP, VLAN, Virtualisation (VMware, GNS3)</div>`,
+<div class="t-line">▸ <span class="t-success">Systèmes & Réseaux :</span> Linux/Ubuntu, Cisco IOS (NAT/Routage), TCP/IP, VLAN, GNS3, VMware</div>`,
 
     contact: () => `
 <div class="t-line">📞 Téléphone & WhatsApp : <span class="t-highlight">+212 7 66 90 83 81</span></div>
@@ -217,6 +229,13 @@ function initTerminalCLI() {
           sectionId: 'zabbix-project',
           cardSelector: '.zabbix-card'
         },
+        vpn: {
+          ip: '192.168.2.10',
+          host: 'vpnserver.softether-ssl.lab',
+          name: 'Lab VPN SoftEther & PKI OpenSSL',
+          sectionId: 'vpn-project',
+          cardSelector: '.vpn-card'
+        },
         ueba: {
           ip: '192.168.20.50',
           host: 'ueba-analyzer.emsi-secops.lab',
@@ -246,6 +265,7 @@ function initTerminalCLI() {
 <div class="t-line">▸ <span class="t-success">ping siem</span>    : Tester le nœud SecOps SIEM & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping ocp</span>     : Tester la passerelle Web3 OCP & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping zabbix</span>  : Tester le serveur de télémétrie Zabbix & ouvrir la session</div>
+<div class="t-line">▸ <span class="t-success">ping vpn</span>     : Tester la passerelle SoftEther VPN SSL & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping ueba</span>    : Tester le moteur UEBA d'analyse comportementale & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping glpi</span>    : Tester le serveur GLPI de gestion d'incidents & ouvrir la session</div>
 <div class="t-line">▸ <span class="t-success">ping beflex</span>  : Tester la plateforme Beflextravel & ouvrir la session</div>`;
@@ -266,6 +286,11 @@ function initTerminalCLI() {
         zabbix: 'zabbix', zabix: 'zabbix', zabiw: 'zabbix', zabbx: 'zabbix', zbx: 'zabbix',
         gns3: 'zabbix', gns: 'zabbix', telemetry: 'zabbix', monitoring: 'zabbix', cpu: 'zabbix', triggers: 'zabbix', items: 'zabbix',
         
+        // VPN & PKI OpenSSL variations & typos
+        vpn: 'vpn', softether: 'vpn', softether_vpn: 'vpn', pki: 'vpn', openssl: 'vpn',
+        tls: 'vpn', mtls: 'vpn', sslvpn: 'vpn', ssl: 'vpn', certificat: 'vpn', certificats: 'vpn',
+        cisco: 'vpn', ciscovpn: 'vpn', nat: 'vpn', securenat: 'vpn',
+
         // UEBA & Gestion des Intrusions variations & typos
         ueba: 'ueba', intrusion: 'ueba', intrusions: 'ueba', ueba13: 'ueba', '13_ueba': 'ueba', '13': 'ueba',
         behavior: 'ueba', anomaly: 'ueba', anomalie: 'ueba', logs: 'ueba', auth: 'ueba', authentification: 'ueba',
@@ -282,7 +307,7 @@ function initTerminalCLI() {
       let resolvedKey = aliases[raw];
 
       if (!resolvedKey) {
-        const canonical = ['siem', 'ocp', 'zabbix', 'ueba', 'glpi', 'beflex'];
+        const canonical = ['siem', 'ocp', 'zabbix', 'vpn', 'ueba', 'glpi', 'beflex'];
         for (const c of canonical) {
           if (raw.includes(c) || c.includes(raw) || getDistance(raw, c) <= 2) {
             resolvedKey = c;
@@ -293,7 +318,7 @@ function initTerminalCLI() {
 
       const info = targets[resolvedKey];
       if (!info) {
-        return `<div class="t-line" style="color:#ef4444;">❌ Hôte inconnu: "${escapeHtml(target)}". Cibles disponibles: siem, ocp, zabbix, ueba, glpi, beflex.</div>`;
+        return `<div class="t-line" style="color:#ef4444;">❌ Hôte inconnu: "${escapeHtml(target)}". Cibles disponibles: siem, ocp, zabbix, vpn, ueba, glpi, beflex.</div>`;
       }
 
       // Execute live ICMP ping simulation
@@ -1004,6 +1029,46 @@ function initProjectSimulations() {
         glpiTicket.innerHTML = `<span>🎫 #INC-2026-0${ticketCounter} : Alerte UEBA - Brute-Force bloqué sur passerelle VPN</span><span style="color: #fbbf24; font-weight: 700;">● EN COURS (Niv. 2)</span>`;
       }
       showToast(`📋 Nouveau ticket créé dans GLPI (#INC-2026-0${ticketCounter}) selon le cycle ITIL !`, 'info');
+    });
+  }
+
+  // SoftEther VPN mTLS Handshake Simulation
+  const vpnBtn = document.getElementById('btn-simulate-vpn');
+  const handshakeContainer = document.getElementById('vpn-handshake-container');
+
+  if (vpnBtn && handshakeContainer) {
+    vpnBtn.addEventListener('click', () => {
+      vpnBtn.disabled = true;
+      vpnBtn.innerHTML = '<span>⏳ Négociation Handshake TLS & Vérification Certificat Client (client2.p12)...</span>';
+
+      const steps = [
+        { text: '1. Client Hello (TLSv1.3, Cipher Suites, Random Nonce)', role: 'Client → Srv', color: '#22d3ee' },
+        { text: '2. Server Hello + Certificate Verify (CN=192.168.2.10 signed by CA)', role: 'Srv → Client', color: '#38bdf8' },
+        { text: '3. Client Certificate Exchange (CN=client2 / PKCS#12 verified)', role: 'Client → Srv', color: '#34d399' },
+        { text: '4. Session Keys Activated (TLS_AES_256_GCM_SHA384) — Tunnel Ready', role: '🔒 Chiffré', color: '#34d399' }
+      ];
+
+      handshakeContainer.innerHTML = `
+        <div style="color: #06b6d4; font-weight: 700; margin-bottom: 0.4rem; display: flex; justify-content: space-between;">
+          <span>📡 Négociation mTLS en cours...</span>
+          <span style="color: #fbbf24;">● En cours</span>
+        </div>
+      `;
+
+      steps.forEach((st, idx) => {
+        setTimeout(() => {
+          const item = document.createElement('div');
+          item.className = 'handshake-step-item active';
+          item.innerHTML = `<span>${st.text}</span><span style="color: ${st.color}; font-weight: 700;">${st.role}</span>`;
+          handshakeContainer.appendChild(item);
+
+          if (idx === steps.length - 1) {
+            showToast('🔐 Authentification mTLS réussie ! Tunnel VPN SoftEther chiffré en AES-256 (IP: 192.168.3.10).', 'success');
+            vpnBtn.disabled = false;
+            vpnBtn.innerHTML = '<span>✓ Tunnel mTLS Établi (Re-tester)</span>';
+          }
+        }, (idx + 1) * 450);
+      });
     });
   }
 }

@@ -167,6 +167,7 @@
                 <button type="button" class="term-ping-chip" data-ping="siem">📡 ping siem</button>
                 <button type="button" class="term-ping-chip" data-ping="ocp">⛓️ ping ocp</button>
                 <button type="button" class="term-ping-chip" data-ping="zabbix">📊 ping zabbix</button>
+                <button type="button" class="term-ping-chip" data-ping="vpn">🔐 ping vpn</button>
                 <button type="button" class="term-ping-chip" data-ping="ueba">🛡️ ping ueba</button>
                 <button type="button" class="term-ping-chip" data-ping="glpi">📋 ping glpi</button>
                 <button type="button" class="term-ping-chip" data-ping="beflex">💼 ping beflex</button>
@@ -759,6 +760,136 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Featured Project 5: Lab VPN SoftEther & PKI OpenSSL (X.509 / Cisco IOS)
+       ========================================================================== -->
+  <section class="featured-project" id="vpn-project">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.35); color: #22d3ee;">🔐 Réseaux Sécurisés & Cryptographie Appliquée</span>
+        <h2 class="section-title">Accès Sécurisé à Distance <span class="gradient-text" style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">VPN SoftEther & PKI</span></h2>
+        <p class="section-subtitle">Conception et déploiement d'une architecture VPN SSL multi-sites sous GNS3 avec routeur Cisco IOS, autorité de certification PKI OpenSSL (X.509/PKCS#12) et analyse de trafic chiffré TLSv1.3 sous Wireshark.</p>
+      </div>
+
+      <div class="vpn-card">
+        <div class="vpn-grid">
+          <div>
+            <div class="vpn-badge">🎓 Projet Réseaux & Sécurité — Lab VPN SSL SoftEther</div>
+            <div class="beflex-tag-row">
+              <span class="beflex-tag" style="color: #22d3ee; border-color: rgba(6, 182, 212, 0.4);">SoftEther VPN</span>
+              <span class="beflex-tag" style="color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">PKI OpenSSL (RSA 4096)</span>
+              <span class="beflex-tag">Certificats X.509</span>
+              <span class="beflex-tag">Archive PKCS#12</span>
+              <span class="beflex-tag">Routeur Cisco IOS</span>
+              <span class="beflex-tag">NAT & SecureNAT</span>
+              <span class="beflex-tag">TLSv1.3 / AES-256</span>
+              <span class="beflex-tag">GNS3 & Ubuntu 22.04</span>
+              <span class="beflex-tag">Wireshark Analysis</span>
+            </div>
+
+            <h3 class="beflex-title" style="font-size: 1.85rem;">VPN SSL & Authentification par Certificat vs Mot de Passe</h3>
+
+            <p class="beflex-description">
+              Mise en place d'un tunnel VPN SSL sécurisé isolant les accès distants vers les serveurs internes sensibles. Le projet implémente une <strong>infrastructure PKI complète (CA racine RSA 4096 bits, certificats serveurs et clients)</strong> et démontre l'invulnérabilité de l'authentification par certificat face aux attaques par force brute ou interception.
+            </p>
+
+            <ul class="beflex-features-list">
+              <li><span class="check-icon">✓</span> <strong>Architecture Multi-Segments GNS3 :</strong> Routeur Cisco IOS assurant le routage inter-réseaux et NAT entre LAN Clients (192.168.8.0/24), WAN VPN (192.168.2.0/24) et LAN interne (192.168.1.0/24).</li>
+              <li><span class="check-icon">✓</span> <strong>Déploiement SoftEther VPN :</strong> Hub virtuel, SecureNAT (DHCP pool 192.168.3.0/24) et filtrage pare-feu UFW sur ports 443 (SSL-VPN HTTPS), 992, 1194 et 5555.</li>
+              <li><span class="check-icon">✓</span> <strong>Autorité de Certification PKI OpenSSL :</strong> Génération de la CA racine auto-signée (valable 10 ans), signature de <code>server.crt</code> et export des certificats clients protégés par mot de passe en <strong>PKCS#12 (<code>client2.p12</code>)</strong>.</li>
+              <li><span class="check-icon">✓</span> <strong>Authentification Mutuelle (mTLS) :</strong> Démonstration comparative entre authentification vulnérable par mot de passe (<code>user_password</code>) et authentification forte inviolable par certificat X.509 (<code>user_cert</code>).</li>
+              <li><span class="check-icon">✓</span> <strong>Analyse Forensique Wireshark :</strong> Preuve visuelle du passage d'un trafic HTTP en clair interceptable à des flux hermétiques encapsulés sous <strong>TLSv1.3 avec chiffrement AES-256-GCM</strong>.</li>
+            </ul>
+
+            <div class="beflex-cta-group">
+              <button type="button" class="btn btn-primary" id="btn-simulate-vpn" style="background: linear-gradient(135deg, #0284c7, #0369a1); border: none;">
+                <span>🔐 Simuler Handshake mTLS & Connexion VPN</span>
+              </button>
+              <a href="#contact" class="btn btn-secondary">
+                <span>💬 Échanger sur ce projet</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive VPN Preview & Handshake Inspector -->
+          <div class="vpn-preview-wrapper">
+            <div class="vpn-preview-topbar">
+              <div class="terminal-dots">
+                <span class="t-dot t-dot-red"></span>
+                <span class="t-dot t-dot-yellow"></span>
+                <span class="t-dot t-dot-green"></span>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #22d3ee; font-weight: 700;">
+                🔒 SoftEther VPN SSL Client v4.41
+              </div>
+              <span style="font-size: 0.7rem; color: #64748b; font-family: var(--font-mono);">TLSv1.3 AES-256</span>
+            </div>
+
+            <div class="vpn-preview-body">
+              <div class="vpn-status-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.4rem;">
+                  <div>
+                    <span style="font-size: 0.68rem; color: #94a3b8;">SESSION ACTIVE :</span>
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: #22d3ee;">CLIENT-2 (user_cert)</div>
+                  </div>
+                  <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">● TUNNEL ÉTABLI</span>
+                </div>
+
+                <div class="crypto-data-grid">
+                  <div class="crypto-data-item">
+                    <span>Passerelle VPN</span>
+                    <strong>192.168.2.10:443</strong>
+                  </div>
+                  <div class="crypto-data-item">
+                    <span>IP Client VPN</span>
+                    <strong style="color: #34d399;">192.168.3.10 (DHCP)</strong>
+                  </div>
+                  <div class="crypto-data-item">
+                    <span>Certificat X.509</span>
+                    <strong style="color: #38bdf8;">CN=client2 (RSA 2048)</strong>
+                  </div>
+                  <div class="crypto-data-item">
+                    <span>Autorité CA</span>
+                    <strong>VPN-Lab-Root-CA</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Handshake Sequence Box -->
+              <div class="vpn-handshake-box" id="vpn-handshake-container">
+                <div style="color: #06b6d4; font-weight: 700; margin-bottom: 0.4rem; display: flex; justify-content: space-between;">
+                  <span>📡 Handshake TLS & Négociation mTLS :</span>
+                  <span style="color: #34d399;">✓ Authentifié</span>
+                </div>
+                <div class="handshake-step-item active">
+                  <span>1. Client Hello (TLSv1.3, Cipher Suites)</span>
+                  <span style="color: #22d3ee;">Client → Srv</span>
+                </div>
+                <div class="handshake-step-item active">
+                  <span>2. Server Hello + Certificate (CN=192.168.2.10)</span>
+                  <span style="color: #38bdf8;">Srv → Client</span>
+                </div>
+                <div class="handshake-step-item active">
+                  <span>3. Certificate Verify + Client Key (client2.p12)</span>
+                  <span style="color: #22d3ee;">Client → Srv</span>
+                </div>
+                <div class="handshake-step-item active">
+                  <span>4. Change Cipher Spec + Finished (AES-256-GCM)</span>
+                  <span style="color: #34d399;">🔒 Chiffré</span>
+                </div>
+              </div>
+
+              <div style="background: rgba(4, 8, 16, 0.85); border: 1px solid rgba(6, 182, 212, 0.25); border-radius: 4px; padding: 0.6rem; font-family: var(--font-mono); font-size: 0.72rem;">
+                <div style="color: #94a3b8; margin-bottom: 0.2rem;">Accès Ressource Interne Sécurisée :</div>
+                <div style="color: #34d399; font-weight: 700;">$ curl http://192.168.1.10 &rarr; HTTP/1.1 200 OK (Serveur Web Interne)</div>
+              </div>
             </div>
           </div>
         </div>
